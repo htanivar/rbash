@@ -9,6 +9,7 @@
 
 - [Logging Functions](docs/LOG.md)
 - [Error Handling Functions](docs/ERROR.md)
+- [Validation Functions](docs/VALIDATION.md)
 
 ## Logging Functions
 
@@ -54,3 +55,30 @@ source "$PROJECT_ROOT_DIR/functions/error.sh"
 ```
 
 See [examples/error-functions.sh](examples/error-functions.sh) for error function usage examples.
+
+## Validation Functions
+
+The project provides robust validation capabilities through `functions/validation.sh`:
+
+### Core Functions
+- [`require_root()`](docs/VALIDATION.md#require_root) - Validates that the script is run as root user
+- [`require_non_root()`](docs/VALIDATION.md#require_non_root) - Validates that the script is NOT run as root user
+- [`require_var()`](docs/VALIDATION.md#require_var) - Validates that a required variable is set and not empty
+- [`require_command()`](docs/VALIDATION.md#require_command) - Validates that a required command is available in the system
+- [`require_file()`](docs/VALIDATION.md#require_file) - Validates that a required file exists
+- [`require_directory()`](docs/VALIDATION.md#require_directory) - Validates that a required directory exists
+- [`check_file_permissions()`](docs/VALIDATION.md#check_file_permissions) - Validates file permissions (read, write, execute)
+
+To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+
+```bash
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the validation functions
+source "$PROJECT_ROOT_DIR/functions/validation.sh"
+```
+
+See [examples/validation-functions.sh](examples/validation-functions.sh) for validation function usage examples.
