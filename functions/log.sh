@@ -46,3 +46,36 @@ log() {
         echo "$log_entry" >> "$DEFAULT_LOG_FILE"
     fi
 }
+
+# Specialized logging functions
+log_info() {
+    log "$1" "INFO"
+}
+
+log_warn() {
+    log "$1" "WARN"
+}
+
+log_error() {
+    log "$1" "ERROR"
+}
+
+log_debug() {
+    if [ "${DEBUG:-0}" = "1" ]; then
+        log "$1" "DEBUG"
+    fi
+}
+
+log_step() {
+    local step="$1"
+    local message="$2"
+    log "[$step] $message" "STEP"
+}
+
+# Log command execution
+log_command() {
+    local command="$1"
+    local log_file="${2:-command_log.txt}"
+    echo "$command" >> "$log_file"
+    log "Command logged to $log_file: $command" "CMD"
+}
