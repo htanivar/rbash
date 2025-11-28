@@ -1,8 +1,13 @@
 #!/bin/bash
 
 # Example script demonstrating the usage of specialized logging functions
+# Set PROJECT_ROOT_DIR before sourcing log.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
 # Source the logging functions
-source "$(dirname "$0")/../functions/log.sh"
+source "$PROJECT_ROOT_DIR/functions/log.sh"
 
 # Initialize logging
 init_logging "example_script"

@@ -25,9 +25,16 @@ The project provides robust logging capabilities through `functions/log.sh`:
 - [`log_step()`](docs/LOG.md#log_step) - Logs step messages with identifiers
 - [`log_command()`](docs/LOG.md#log_command) - Logs commands to a file
 
-To use these functions in your scripts:
+To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+
 ```bash
-source "$(dirname "$0")/functions/log.sh"
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the logging functions
+source "$PROJECT_ROOT_DIR/functions/log.sh"
 ```
 
 See [examples/log-functions.sh](examples/log-functions.sh) for usage examples.

@@ -5,11 +5,25 @@ This document provides detailed usage examples for the logging functions availab
 ## Prerequisites
 
 Before using these functions, ensure:
-- `PROJECT_ROOT_DIR` is set in `config/config.sh` to point to your project root
+- `PROJECT_ROOT_DIR` environment variable is set to point to your project root
 - `config/config.sh` exists and defines `$DEFAULT_LOG_DIR` (defaults to `$PROJECT_ROOT_DIR/logs`)
-- The script sourcing `log.sh` must be run from within the project structure where `PROJECT_ROOT_DIR` is accessible
 
 **Note:** Log files in the `logs/` directory are ignored by git (see `.gitignore`)
+
+## Setting up PROJECT_ROOT_DIR
+
+To use the logging functions in your scripts, you must set `PROJECT_ROOT_DIR` before sourcing `log.sh`:
+
+```bash
+#!/bin/bash
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the logging functions
+source "$PROJECT_ROOT_DIR/functions/log.sh"
+```
 
 ## Function Documentation
 
