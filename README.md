@@ -13,13 +13,21 @@
 
 The project provides robust logging capabilities through `functions/log.sh`:
 
-### init_logging()
-Initializes the logging system by creating a timestamped log file. It automatically handles directory creation and fallback to `/tmp` if needed.
+### Core Functions
+- [`init_logging()`](docs/LOG.md#init_logging) - Initializes the logging system by creating a timestamped log file
+- [`log()`](docs/LOG.md#log) - Logs messages with timestamps and levels to both console and log file
 
-### log()
-Logs messages with timestamps and levels to both console and log file. Supports different log levels like INFO, WARNING, ERROR.
+### Specialized Functions
+- [`log_info()`](docs/LOG.md#log_info) - Logs informational messages
+- [`log_warn()`](docs/LOG.md#log_warn) - Logs warning messages
+- [`log_error()`](docs/LOG.md#log_error) - Logs error messages
+- [`log_debug()`](docs/LOG.md#log_debug) - Logs debug messages (when DEBUG=1)
+- [`log_step()`](docs/LOG.md#log_step) - Logs step messages with identifiers
+- [`log_command()`](docs/LOG.md#log_command) - Logs commands to a file
 
 To use these functions in your scripts:
 ```bash
 source "$(dirname "$0")/functions/log.sh"
 ```
+
+See [examples/log-functions.sh](examples/log-functions.sh) for usage examples.

@@ -84,23 +84,95 @@ log "Disk space running low" "WARNING"
 log "Database connection failed" "ERROR"
 ```
 
-3. In a complete script example:
+### Specialized Logging Functions
+
+#### log_info()
+Logs informational messages. Equivalent to `log "message" "INFO"`.
+
+**Syntax:**
 ```bash
-#!/bin/bash
-source "$(dirname "$0")/functions/log.sh"
-
-init_logging "data_processor.sh"
-
-log "Starting data processing job"
-# ... processing logic ...
-if [ $? -eq 0 ]; then
-    log "Data processing completed successfully"
-else
-    log "Data processing failed" "ERROR"
-    exit 1
-fi
-log "Job finished" "INFO"
+log_info "message"
 ```
+
+**Example:**
+```bash
+log_info "Application started successfully"
+```
+
+#### log_warn()
+Logs warning messages. Equivalent to `log "message" "WARN"`.
+
+**Syntax:**
+```bash
+log_warn "message"
+```
+
+**Example:**
+```bash
+log_warn "Disk space is running low"
+```
+
+#### log_error()
+Logs error messages. Equivalent to `log "message" "ERROR"`.
+
+**Syntax:**
+```bash
+log_error "message"
+```
+
+**Example:**
+```bash
+log_error "Failed to connect to database"
+```
+
+#### log_debug()
+Logs debug messages only when `DEBUG=1` environment variable is set.
+
+**Syntax:**
+```bash
+log_debug "message"
+```
+
+**Example:**
+```bash
+DEBUG=1
+log_debug "Debug information for troubleshooting"
+```
+
+#### log_step()
+Logs step messages with a specific step identifier.
+
+**Syntax:**
+```bash
+log_step "step_name" "message"
+```
+
+**Example:**
+```bash
+log_step "SETUP" "Initializing database connection"
+# Output: [timestamp] [STEP] [SETUP] Initializing database connection
+```
+
+#### log_command()
+Logs commands to a specified file and also logs the action.
+
+**Syntax:**
+```bash
+log_command "command" [log_file]
+```
+
+**Parameters:**
+- `command`: The command to log
+- `log_file` (optional): File to log the command to (defaults to "command_log.txt")
+
+**Example:**
+```bash
+log_command "rm -rf /tmp/cache" "cleanup_commands.log"
+```
+
+### Complete Example Script
+
+See [examples/log-functions.sh](../examples/log-functions.sh) for a complete demonstration of all logging functions.
 
 ## Best Practices
 
