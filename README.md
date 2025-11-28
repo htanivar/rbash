@@ -26,6 +26,8 @@ The project provides robust logging capabilities through `functions/log.sh`:
 - [`log_step()`](docs/LOG.md#log_step) - Logs step messages with identifiers
 - [`log_command()`](docs/LOG.md#log_command) - Logs commands to a file
 
+See [examples/log-functions.sh](examples/log-functions.sh) for logging usage examples.
+
 ## Error Handling Functions
 
 The project provides robust error handling capabilities through `functions/error.sh`:
@@ -51,4 +53,4 @@ source "$PROJECT_ROOT_DIR/functions/log.sh"
 source "$PROJECT_ROOT_DIR/functions/error.sh"
 ```
 
-See [examples/log-functions.sh](examples/log-functions.sh) for logging usage examples.
+See [examples/error-functions.sh](examples/error-functions.sh) for error function usage examples.
