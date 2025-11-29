@@ -2,6 +2,10 @@
 
 The project provides robust input handling capabilities through `functions/input.sh`:
 
+## Table of Contents
+- [prompt_input](#prompt_input)
+- [confirm_action](#confirm_action)
+
 ## Core Functions
 
 ### prompt_input

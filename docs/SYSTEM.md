@@ -3,7 +3,6 @@
 The system functions provide utilities for gathering system information and performing system-level checks.
 
 ## Table of Contents
-
 - [get_current_user](#get_current_user)
 - [get_distribution](#get_distribution)
 - [check_distribution](#check_distribution)

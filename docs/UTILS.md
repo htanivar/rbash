@@ -2,6 +2,12 @@
 
 The project provides utility capabilities through `functions/utils.sh`:
 
+## Table of Contents
+- [create_directory](#create_directory)
+- [backup_file](#backup_file)
+- [generate_random_string](#generate_random_string)
+- [check_port](#check_port)
+
 ## Core Functions
 
 ### create_directory

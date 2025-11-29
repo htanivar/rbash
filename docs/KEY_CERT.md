@@ -3,8 +3,9 @@
 The key & cert functions provide utilities for gathering system information and performing system-level checks.
 
 ## Table of Contents
-
 - [generate_ssh_key](#generate_ssh_key)
+
+## Function Documentation
 
 ### generate_ssh_key
 
