@@ -1,19 +1,5 @@
 #!/bin/bash
 # utils.sh - utils utility functions for bash scripts
-# Source this file at the beginning of your scripts: source "$(dirname "$0")/helpers/utils.sh"
-
-# Source the configuration using PROJECT_ROOT_DIR
-if [ -n "$PROJECT_ROOT_DIR" ]; then
-    source "$PROJECT_ROOT_DIR/config/config.sh"
-    # Source error functions
-    source "$PROJECT_ROOT_DIR/functions/error.sh"
-    # Source logging functions
-    source "$PROJECT_ROOT_DIR/functions/log.sh"
-else
-    echo "PROJECT_ROOT_DIR is not set. Please set it before sourcing utils.sh" >&2
-    exit 1
-fi
-
 
 # =============================================================================
 # UTILITY FUNCTIONS

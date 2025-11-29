@@ -1,17 +1,9 @@
 #!/bin/bash
 # system-functions.sh - examples of using system utility functions
-# This script demonstrates the usage of functions from functions/system.sh
 
-# Set PROJECT_ROOT_DIR to the directory containing config/config.sh
-# In a real scenario, this would be set to your project's root directory
-PROJECT_ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-export PROJECT_ROOT_DIR
+# Source the main loader instead of individual files
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/core-loader.sh"
 
-# Source the system functions
-source "$PROJECT_ROOT_DIR/functions/system.sh"
-
-# Initialize logging
-init_logging "system-functions"
 
 echo "=== System Functions Examples ==="
 echo

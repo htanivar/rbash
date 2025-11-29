@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# Example script demonstrating error handling functions
-# Set up project root
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-export PROJECT_ROOT_DIR
-
-# Source the error handling and logging functions
-source "$PROJECT_ROOT_DIR/functions/log.sh"
-source "$PROJECT_ROOT_DIR/functions/error.sh"
+# Source the main loader instead of individual files
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/core-loader.sh"
 
 # Initialize logging
 init_logging "error-functions-example"

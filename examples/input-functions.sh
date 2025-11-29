@@ -1,20 +1,8 @@
 #!/bin/bash
 
-# Example script demonstrating the usage of specialized logging functions
-# Set PROJECT_ROOT_DIR before sourcing log.sh
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-export PROJECT_ROOT_DIR
 
-# Source the functions
-source "$PROJECT_ROOT_DIR/functions/log.sh"
-source "$PROJECT_ROOT_DIR/functions/error.sh"
-source "$PROJECT_ROOT_DIR/functions/validation.sh"
-source "$PROJECT_ROOT_DIR/functions/input.sh"
-
-# input-functions.sh - Examples for using input utility functions
-# This file demonstrates how to use the input functions from functions/input.sh
-
+# Source the main loader instead of individual files
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/core-loader.sh"
 
 echo "=== Input Functions Examples ==="
 echo
