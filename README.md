@@ -12,6 +12,7 @@
 - [Validation Functions](docs/VALIDATION.md)
 - [Input Functions](docs/INPUT.md)
 - [System Functions](docs/SYSTEM.md)
+- [Utility Functions](docs/UTILS.md)
 
 ## Logging Functions
 
