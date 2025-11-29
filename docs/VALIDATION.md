@@ -2,6 +2,16 @@
 
 The project provides robust validation capabilities through `functions/validation.sh`:
 
+## Table of Contents
+- [require_root](#require_root)
+- [require_non_root](#require_non_root)
+- [require_var](#require_var)
+- [require_command](#require_command)
+- [require_file](#require_file)
+- [require_directory](#require_directory)
+- [check_file_permissions](#check_file_permissions)
+- [check_distribution](#check_distribution)
+
 ## Core Functions
 
 ### require_root()

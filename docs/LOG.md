@@ -2,6 +2,16 @@
 
 This document provides detailed usage examples for the logging functions available in the project.
 
+## Table of Contents
+- [init_logging](#init_logging)
+- [log](#log)
+- [log_info](#log_info)
+- [log_warn](#log_warn)
+- [log_error](#log_error)
+- [log_debug](#log_debug)
+- [log_step](#log_step)
+- [log_command](#log_command)
+
 ## Prerequisites
 
 Before using these functions, ensure:

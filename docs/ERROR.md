@@ -2,6 +2,12 @@
 
 The project provides robust error handling capabilities through `functions/error.sh`:
 
+## Table of Contents
+- [error_exit](#error_exit)
+- [warn](#warn)
+- [set_strict_mode](#set_strict_mode)
+- [setup_cleanup_trap](#setup_cleanup_trap)
+
 ## Core Functions
 
 ### `error_exit()`
