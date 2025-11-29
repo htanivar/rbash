@@ -1,5 +1,5 @@
 #!/bin/bash
-# Enhanced core-loader.sh with better auto-detection
+# Enhanced core-loader.sh with better auto-detection and function loading
 
 find_project_root() {
     local dir="$1"
@@ -30,3 +30,18 @@ if [ -z "$PROJECT_ROOT_DIR" ]; then
     fi
     export PROJECT_ROOT_DIR
 fi
+
+# Source config first
+if [ -f "$PROJECT_ROOT_DIR/config.sh" ]; then
+    source "$PROJECT_ROOT_DIR/config.sh"
+else
+    echo "Error: config.sh not found at $PROJECT_ROOT_DIR/config.sh" >&2
+    return 1 2>/dev/null || exit 1
+fi
+
+# Source all function files
+for function_file in "$PROJECT_ROOT_DIR/functions"/*.sh; do
+    if [ -f "$function_file" ]; then
+        source "$function_file"
+    fi
+done
