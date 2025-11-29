@@ -1,14 +1,5 @@
 #!/bin/bash
 # validation.sh - validation utility functions for bash scripts
-# Source this file at the beginning of your scripts: source "$(dirname "$0")/helpers/validation_utils.sh"
-
-# Source the configuration using PROJECT_ROOT_DIR
-if [ -n "$PROJECT_ROOT_DIR" ]; then
-    source "$PROJECT_ROOT_DIR/config/config.sh"
-else
-    echo "PROJECT_ROOT_DIR is not set. Please set it before sourcing log.sh" >&2
-    exit 1
-fi
 
 # =============================================================================
 # VALIDATION FUNCTIONS

@@ -1,16 +1,8 @@
 #!/bin/bash
 # validation-functions.sh - examples of using validation functions
 
-# Set PROJECT_ROOT_DIR to the root of your project
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-export PROJECT_ROOT_DIR
-
-# Source the validation functions
-source "$PROJECT_ROOT_DIR/functions/validation.sh"
-
-# Source the logging functions for demonstration
-source "$PROJECT_ROOT_DIR/functions/log.sh"
+# Source the main loader instead of individual files
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/core-loader.sh"
 
 # Initialize logging
 init_logging

@@ -1,15 +1,8 @@
 #!/bin/bash
 # utils-functions.sh - Examples for using utility functions from utils.sh
-# Make sure to source utils.sh before running these examples
 
-# Example script demonstrating error handling functions
-# Set up project root
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-export PROJECT_ROOT_DIR
-
-# Source the utility functions
-source "$(dirname "$0")/../functions/utils.sh"
+# Source the main loader instead of individual files
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/core-loader.sh"
 
 echo "=== Utility Functions Examples ==="
 
