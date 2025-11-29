@@ -66,6 +66,8 @@ The project provides robust validation capabilities through `functions/validatio
 - [`require_directory()`](docs/VALIDATION.md#require_directory) - Validates that a required directory exists
 - [`check_file_permissions()`](docs/VALIDATION.md#check_file_permissions) - Validates file permissions (read, write,
   execute)
+- [`check_distribution()`](docs/VALIDATION.md#check_distribution) - Checks if the current distribution is in the supported
+  list
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
@@ -93,8 +95,7 @@ The project provides system utility capabilities through `functions/system.sh`:
 
 - [`get_current_user()`](docs/SYSTEM.md#get_current_user) - Gets the current non-root user (works with sudo)
 - [`get_distribution()`](docs/SYSTEM.md#get_distribution) - Gets the distribution information
-- [`check_distribution()`](docs/SYSTEM.md#check_distribution) - Checks if the current distribution is in the supported
-  list
+
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 

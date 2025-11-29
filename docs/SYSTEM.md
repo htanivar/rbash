@@ -60,38 +60,3 @@ The distribution ID is converted to lowercase for consistency.
 **Returns:**
 The distribution ID in lowercase (e.g., "ubuntu", "debian", "centos")
 
----
-
-### check_distribution
-
-Checks if the current distribution is in the list of supported distributions.
-
-**Usage:**
-
-```bash
-# Check against specific distributions
-check_distribution "ubuntu debian centos"
-
-# Use in conditional logic
-if (check_distribution "ubuntu debian" >/dev/null 2>&1); then
-    echo "This is a Debian-based system"
-fi
-```
-
-**Description:**
-This function compares the current distribution (from `get_distribution()`) against a space-separated list of supported
-distributions. If the current distribution is found in the list, it returns 0 (success). If not found, it calls
-`error_exit` to terminate the script with an error message.
-
-**Parameters:**
-
-- `$1`: Space-separated list of supported distribution names
-
-**Returns:**
-
-- 0 if distribution is supported
-- Calls `error_exit` if distribution is not supported
-
-**Note:** When using in conditionals, run in a subshell to prevent the entire script from exiting on unsupported
-distributions.
-
