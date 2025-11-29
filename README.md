@@ -11,6 +11,7 @@
 - [Error Handling Functions](docs/ERROR.md)
 - [Validation Functions](docs/VALIDATION.md)
 - [Input Functions](docs/INPUT.md)
+- [System Functions](docs/SYSTEM.md)
 
 ## Logging Functions
 
@@ -105,3 +106,26 @@ source "$PROJECT_ROOT_DIR/functions/input.sh"
 ```
 
 See [examples/input-functions.sh](examples/input-functions.sh) for input function usage examples.
+
+## System Functions
+
+The project provides system utility capabilities through `functions/system.sh`:
+
+### Core Functions
+- [`get_current_user()`](docs/SYSTEM.md#get_current_user) - Gets the current non-root user (works with sudo)
+- [`get_distribution()`](docs/SYSTEM.md#get_distribution) - Gets the distribution information
+- [`check_distribution()`](docs/SYSTEM.md#check_distribution) - Checks if the current distribution is in the supported list
+
+To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+
+```bash
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the system functions
+source "$PROJECT_ROOT_DIR/functions/system.sh"
+```
+
+See [examples/system-functions.sh](examples/system-functions.sh) for system function usage examples.
