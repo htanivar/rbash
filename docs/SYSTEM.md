@@ -6,6 +6,9 @@ The system functions provide utilities for gathering system information and perf
 - [get_current_user](#get_current_user)
 - [get_distribution](#get_distribution)
 - [check_distribution](#check_distribution)
+- [generate_ssh_key](#generate_ssh_key)
+- [add_to_path](#add_to_path)
+- [create_path_link](#create_path_link)
 
 ## Function Documentation
 
@@ -82,3 +85,71 @@ This function compares the current distribution (from `get_distribution()`) agai
 - Calls `error_exit` if distribution is not supported
 
 **Note:** When using in conditionals, run in a subshell to prevent the entire script from exiting on unsupported distributions.
+
+---
+
+### generate_ssh_key
+
+Generates SSH key pairs with specified parameters.
+
+**Usage:**
+```bash
+generate_ssh_key "/path/to/key" "email@example.com" "rsa" 4096
+```
+
+**Description:**
+This function generates SSH key pairs using the ssh-keygen command. It allows customization of key type, size, and comment. The function will create the necessary directory structure if it doesn't exist.
+
+**Parameters:**
+- `$1`: Path where the private key will be stored (public key will be at the same path with .pub extension)
+- `$2`: Comment for the key (typically email)
+- `$3`: Key type (rsa, ed25519, etc.)
+- `$4`: Key size in bits
+
+**Returns:**
+- 0 on success
+- Calls `error_exit` on failure
+
+---
+
+### add_to_path
+
+Adds directories to the PATH environment variable.
+
+**Usage:**
+```bash
+add_to_path "/usr/local/bin" "/opt/myapp/bin"
+```
+
+**Description:**
+This function adds one or more directories to the PATH environment variable if they're not already present. It modifies the current shell's PATH.
+
+**Parameters:**
+- `$@`: One or more directory paths to add to PATH
+
+**Returns:**
+- 0 on success
+- Calls `error_exit` if any directory doesn't exist
+
+---
+
+### create_path_link
+
+Creates symbolic links in system paths.
+
+**Usage:**
+```bash
+create_path_link "/path/to/source" "link_name"
+```
+
+**Description:**
+This function creates symbolic links from source files/directories to a link name in the user's local bin directory (default: `$HOME/.local/bin`). It ensures the bin directory exists, handles backup of existing links, and adds the bin directory to PATH if not already present.
+
+**Parameters:**
+- `$1`: Source file/directory path
+- `$2`: Link name (not full path, will be created in bin directory)
+- `$3`: Optional custom bin directory (default: `$HOME/.local/bin`)
+
+**Returns:**
+- 0 on success
+- Calls `error_exit` on failure
