@@ -10,6 +10,7 @@
 - [Logging Functions](docs/LOG.md)
 - [Error Handling Functions](docs/ERROR.md)
 - [Validation Functions](docs/VALIDATION.md)
+- [Input Functions](docs/INPUT.md)
 
 ## Logging Functions
 
@@ -82,3 +83,25 @@ source "$PROJECT_ROOT_DIR/functions/validation.sh"
 ```
 
 See [examples/validation-functions.sh](examples/validation-functions.sh) for validation function usage examples.
+
+## Input Functions
+
+The project provides robust input handling capabilities through `functions/input.sh`:
+
+### Core Functions
+- [`prompt_input()`](docs/INPUT.md#prompt_input) - Prompts for user input with validation, defaults, and secret input support
+- [`confirm_action()`](docs/INPUT.md#confirm_action) - Confirms actions with the user with customizable defaults
+
+To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+
+```bash
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the input functions
+source "$PROJECT_ROOT_DIR/functions/input.sh"
+```
+
+See [examples/input-functions.sh](examples/input-functions.sh) for input function usage examples.
