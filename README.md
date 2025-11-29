@@ -118,18 +118,20 @@ The project provides utility capabilities through `functions/os_ops.sh`:
 - [`create_directory()`](docs/UTILS.md#create_directory) - Creates directory with proper ownership and permissions
 - [`backup_file()`](docs/UTILS.md#backup_file) - Backs up file with timestamp
 
+See [examples/os_ops-functions.sh](examples/os_ops-functions.sh) for utility function usage examples.
+
 ## Network Functions
 
 The project provides utility capabilities through `functions/network.sh`:
 
 - [`check_port()`](docs/UTILS.md#check_port) - Checks if port is available
 
+See [examples/network-functions.sh](examples/network-functions.sh) for utility function usage examples.
+
 ## Utility Functions
 
 The project provides utility capabilities through `functions/utils.sh`:
 
 - [`generate_random_string()`](docs/UTILS.md#generate_random_string) - Generates random string
-
-To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
 See [examples/utils-functions.sh](examples/utils-functions.sh) for utility function usage examples.
