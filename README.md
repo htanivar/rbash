@@ -130,3 +130,27 @@ source "$PROJECT_ROOT_DIR/functions/system.sh"
 ```
 
 See [examples/system-functions.sh](examples/system-functions.sh) for system function usage examples.
+
+## Utility Functions
+
+The project provides utility capabilities through `functions/utils.sh`:
+
+### Core Functions
+- [`create_directory()`](docs/UTILS.md#create_directory) - Creates directory with proper ownership and permissions
+- [`backup_file()`](docs/UTILS.md#backup_file) - Backs up file with timestamp
+- [`generate_random_string()`](docs/UTILS.md#generate_random_string) - Generates random string
+- [`check_port()`](docs/UTILS.md#check_port) - Checks if port is available
+
+To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+
+```bash
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the utility functions
+source "$PROJECT_ROOT_DIR/functions/utils.sh"
+```
+
+See [examples/utils-functions.sh](examples/utils-functions.sh) for utility function usage examples.
