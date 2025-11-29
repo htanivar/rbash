@@ -11,7 +11,7 @@ put a ./ and then script name
 - [Error Handling Functions](docs/ERROR.md)
 - [Validation Functions](docs/VALIDATION.md)
 - [Input Functions](docs/INPUT.md)
-- [System Functions](docs/SYSTEM.md)
+- [Info Functions](docs/INFO.md)
 - [Key & Cert Functions](docs/KEY_CERT.md)
 - [Path Functions](docs/PATH.md)
 - [Utility Functions](docs/UTILS.md)
@@ -20,13 +20,8 @@ put a ./ and then script name
 
 The project provides robust logging capabilities through `functions/log.sh`:
 
-### Core Functions
-
 - [`init_logging()`](docs/LOG.md#init_logging) - Initializes the logging system by creating a timestamped log file
 - [`log()`](docs/LOG.md#log) - Logs messages with timestamps and levels to both console and log file
-
-### Specialized Functions
-
 - [`log_info()`](docs/LOG.md#log_info) - Logs informational messages
 - [`log_warn()`](docs/LOG.md#log_warn) - Logs warning messages
 - [`log_error()`](docs/LOG.md#log_error) - Logs error messages
@@ -39,8 +34,6 @@ See [examples/log-functions.sh](examples/log-functions.sh) for logging usage exa
 ## Error Handling Functions
 
 The project provides robust error handling capabilities through `functions/error.sh`:
-
-### Core Functions
 
 - [`error_exit()`](docs/ERROR.md#error_exit) - Exits the script with an error message and specified exit code
 - [`warn()`](docs/ERROR.md#warn) - Logs a warning message
@@ -55,8 +48,6 @@ See [examples/error-functions.sh](examples/error-functions.sh) for error functio
 
 The project provides robust validation capabilities through `functions/validation.sh`:
 
-### Core Functions
-
 - [`require_root()`](docs/VALIDATION.md#require_root) - Validates that the script is run as root user
 - [`require_non_root()`](docs/VALIDATION.md#require_non_root) - Validates that the script is NOT run as root user
 - [`require_var()`](docs/VALIDATION.md#require_var) - Validates that a required variable is set and not empty
@@ -66,7 +57,8 @@ The project provides robust validation capabilities through `functions/validatio
 - [`require_directory()`](docs/VALIDATION.md#require_directory) - Validates that a required directory exists
 - [`check_file_permissions()`](docs/VALIDATION.md#check_file_permissions) - Validates file permissions (read, write,
   execute)
-- [`check_distribution()`](docs/VALIDATION.md#check_distribution) - Checks if the current distribution is in the supported
+- [`check_distribution()`](docs/VALIDATION.md#check_distribution) - Checks if the current distribution is in the
+  supported
   list
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
@@ -77,8 +69,6 @@ See [examples/validation-functions.sh](examples/validation-functions.sh) for val
 
 The project provides robust input handling capabilities through `functions/input.sh`:
 
-### Core Functions
-
 - [`prompt_input()`](docs/INPUT.md#prompt_input) - Prompts for user input with validation, defaults, and secret input
   support
 - [`confirm_action()`](docs/INPUT.md#confirm_action) - Confirms actions with the user with customizable defaults
@@ -87,27 +77,22 @@ To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
 See [examples/input-functions.sh](examples/input-functions.sh) for input function usage examples.
 
-## System Functions
+## Info Functions
 
-The project provides system utility capabilities through `functions/system.sh`:
+The project provides system utility capabilities through `functions/info.sh`:
 
-### Core Functions
-
-- [`get_current_user()`](docs/SYSTEM.md#get_current_user) - Gets the current non-root user (works with sudo)
-- [`get_distribution()`](docs/SYSTEM.md#get_distribution) - Gets the distribution information
-
+- [`get_current_user()`](docs/INFO.md#get_current_user) - Gets the current non-root user (works with sudo)
+- [`get_distribution()`](docs/INFO.md#get_distribution) - Gets the distribution information
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
-See [examples/system-functions.sh](examples/system-functions.sh) for path function usage examples.
+See [examples/info-functions.sh](examples/info-functions.sh) for path function usage examples.
 
 ## Key & Cert Functions
 
 The project provides system utility capabilities through `functions/key_cert.sh`:
 
-### Core Functions
-
-- [`generate_ssh_key()`](docs/SYSTEM.md#generate_ssh_key) - Generates SSH key pairs
+- [`generate_ssh_key()`](docs/INFO.md#generate_ssh_key) - Generates SSH key pairs
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
@@ -116,8 +101,6 @@ See [examples/key_cert-functions.sh](examples/key_cert-functions.sh) for path fu
 ## Path Functions
 
 The project provides system utility capabilities through `functions/path.sh`:
-
-### Core Functions
 
 - [`add_to_path()`](docs/PATH.md#add_to_path) - Adds directories to the PATH environment variable
 - [`create_path_link()`](docs/PATH.md#create_path_link) - Creates symbolic links in system paths
@@ -129,8 +112,6 @@ See [examples/path-functions.sh](examples/path-functions.sh) for path function u
 ## Utility Functions
 
 The project provides utility capabilities through `functions/utils.sh`:
-
-### Core Functions
 
 - [`create_directory()`](docs/UTILS.md#create_directory) - Creates directory with proper ownership and permissions
 - [`backup_file()`](docs/UTILS.md#backup_file) - Backs up file with timestamp

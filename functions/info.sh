@@ -1,5 +1,5 @@
 #!/bin/bash
-# system.sh - system utility functions for bash scripts
+# info.sh - system utility functions for bash scripts
 
 # =============================================================================
 # SYSTEM INFORMATION FUNCTIONS
