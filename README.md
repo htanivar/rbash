@@ -14,6 +14,8 @@ put a ./ and then script name
 - [Info Functions](docs/INFO.md)
 - [Key & Cert Functions](docs/KEY_CERT.md)
 - [Path Functions](docs/PATH.md)
+- [OS Operation Functions](docs/OS_OPS.md)
+- [Network Functions](docs/NETWORK.md)
 - [Utility Functions](docs/UTILS.md)
 
 ## Logging Functions
@@ -109,14 +111,24 @@ To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
 See [examples/path-functions.sh](examples/path-functions.sh) for path function usage examples.
 
+## OS Operation Functions
+
+The project provides utility capabilities through `functions/os_ops.sh`:
+
+- [`create_directory()`](docs/UTILS.md#create_directory) - Creates directory with proper ownership and permissions
+- [`backup_file()`](docs/UTILS.md#backup_file) - Backs up file with timestamp
+
+## Network Functions
+
+The project provides utility capabilities through `functions/network.sh`:
+
+- [`check_port()`](docs/UTILS.md#check_port) - Checks if port is available
+
 ## Utility Functions
 
 The project provides utility capabilities through `functions/utils.sh`:
 
-- [`create_directory()`](docs/UTILS.md#create_directory) - Creates directory with proper ownership and permissions
-- [`backup_file()`](docs/UTILS.md#backup_file) - Backs up file with timestamp
 - [`generate_random_string()`](docs/UTILS.md#generate_random_string) - Generates random string
-- [`check_port()`](docs/UTILS.md#check_port) - Checks if port is available
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
