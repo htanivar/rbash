@@ -12,6 +12,7 @@
 - [Validation Functions](docs/VALIDATION.md)
 - [Input Functions](docs/INPUT.md)
 - [System Functions](docs/SYSTEM.md)
+- [Path Functions](docs/PATH.md)
 - [Utility Functions](docs/UTILS.md)
 
 ## Logging Functions
@@ -132,7 +133,29 @@ export PROJECT_ROOT_DIR
 source "$PROJECT_ROOT_DIR/functions/system.sh"
 ```
 
-See [examples/system-functions.sh](examples/system-functions.sh) for system function usage examples.
+## Path Functions
+
+The project provides system utility capabilities through `functions/path.sh`:
+
+### Core Functions
+
+- [`add_to_path()`](docs/PATH.md#add_to_path) - Adds directories to the PATH environment variable
+- [`create_path_link()`](docs/PATH.md#create_path_link) - Creates symbolic links in system paths
+
+To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+
+```bash
+# Set PROJECT_ROOT_DIR to the root of your project
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+export PROJECT_ROOT_DIR
+
+# Source the system functions
+source "$PROJECT_ROOT_DIR/functions/path.sh"
+```
+
+
+See [examples/path-functions.sh](examples/path-functions.sh) for path function usage examples.
 
 ## Utility Functions
 
