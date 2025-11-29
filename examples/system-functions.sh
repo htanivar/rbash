@@ -22,34 +22,3 @@ echo "   Distribution: $distribution"
 log_debug "Distribution retrieved: $distribution"
 echo
 
-# Example 3: Check if distribution is supported
-log_info "Checking distribution support"
-# Let's check against a list of common distributions
-supported_distros="ubuntu debian centos fedora"
-# Since check_distribution may call error_exit which exits the script, we need to handle it
-# We'll run it in a subshell to prevent the entire script from exiting
-if (check_distribution "$supported_distros" >/dev/null 2>&1); then
-    echo "   Distribution check passed!"
-    log_info "Distribution check passed for: $distribution"
-else
-    echo "   Distribution check failed!"
-    log_warn "Distribution check failed for: $distribution"
-fi
-echo
-
-# Example 4: Using check_distribution in a conditional
-log_info "Performing conditional distribution check"
-echo "4. Conditional distribution check:"
-# Check for specific distribution types
-if (check_distribution "ubuntu debian" >/dev/null 2>&1); then
-    echo "   This is a Debian-based system"
-    log_info "Detected Debian-based system"
-elif (check_distribution "centos fedora rhel" >/dev/null 2>&1); then
-    echo "   This is a Red Hat-based system"
-    log_info "Detected Red Hat-based system"
-else
-    echo "   This is an unsupported system type"
-    log_warn "Detected unsupported system type"
-fi
-echo
-

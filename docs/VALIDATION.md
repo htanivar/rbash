@@ -5,73 +5,106 @@ The project provides robust validation capabilities through `functions/validatio
 ## Core Functions
 
 ### require_root()
+
 Validates that the script is run as root user.
 
 **Usage:**
+
 ```bash
 require_root
 ```
 
 ### require_non_root()
+
 Validates that the script is NOT run as root user.
 
 **Usage:**
+
 ```bash
 require_non_root
 ```
 
 ### require_var()
+
 Validates that a required variable is set and not empty.
 
 **Usage:**
+
 ```bash
 require_var "VARIABLE_NAME"
 ```
 
 ### require_command()
+
 Validates that a required command is available in the system.
 
 **Usage:**
+
 ```bash
 require_command "command_name"
 ```
 
 ### require_file()
+
 Validates that a required file exists.
 
 **Usage:**
+
 ```bash
 require_file "/path/to/file"
 ```
 
 ### require_directory()
+
 Validates that a required directory exists.
 
 **Usage:**
+
 ```bash
 require_directory "/path/to/directory"
 ```
 
 ### check_file_permissions()
+
 Validates file permissions (read, write, execute).
 
 **Usage:**
+
 ```bash
 check_file_permissions "/path/to/file" "rwx"
 ```
 
-## Integration
+### check_distribution
 
-To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
+Checks if the current distribution is in the list of supported distributions.
+
+**Usage:**
 
 ```bash
-# Set PROJECT_ROOT_DIR to the root of your project
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-export PROJECT_ROOT_DIR
+# Check against specific distributions
+check_distribution "ubuntu debian centos"
 
-# Source the validation functions
-source "$PROJECT_ROOT_DIR/functions/validation.sh"
+# Use in conditional logic
+if (check_distribution "ubuntu debian" >/dev/null 2>&1); then
+    echo "This is a Debian-based system"
+fi
 ```
+
+**Description:**
+This function compares the current distribution (from `get_distribution()`) against a space-separated list of supported
+distributions. If the current distribution is found in the list, it returns 0 (success). If not found, it calls
+`error_exit` to terminate the script with an error message.
+
+**Parameters:**
+
+- `$1`: Space-separated list of supported distribution names
+
+**Returns:**
+
+- 0 if distribution is supported
+- Calls `error_exit` if distribution is not supported
+
+**Note:** When using in conditionals, run in a subshell to prevent the entire script from exiting on unsupported
+distributions.
 
 See [examples/validation-functions.sh](examples/validation-functions.sh) for validation function usage examples.

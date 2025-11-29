@@ -70,3 +70,19 @@ check_file_permissions() {
     esac
     log_debug "File permissions validated: $file_path ($required_perms)"
 }
+
+# Check if distribution is supported
+check_distribution() {
+    local supported_distros="$1"  # Space-separated list
+    local current_distro
+    current_distro=$(get_distribution)
+
+    if [[ " $supported_distros " =~ " $current_distro " ]]; then
+        log_debug "Distribution supported: $current_distro"
+        return 0
+    else
+        error_exit "Unsupported distribution: $current_distro. Supported: $supported_distros"
+    fi
+}
+
+
