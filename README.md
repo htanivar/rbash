@@ -116,6 +116,9 @@ The project provides system utility capabilities through `functions/system.sh`:
 - [`get_current_user()`](docs/SYSTEM.md#get_current_user) - Gets the current non-root user (works with sudo)
 - [`get_distribution()`](docs/SYSTEM.md#get_distribution) - Gets the distribution information
 - [`check_distribution()`](docs/SYSTEM.md#check_distribution) - Checks if the current distribution is in the supported list
+- [`generate_ssh_key()`](docs/SYSTEM.md#generate_ssh_key) - Generates SSH key pairs
+- [`add_to_path()`](docs/SYSTEM.md#add_to_path) - Adds directories to the PATH environment variable
+- [`create_path_link()`](docs/SYSTEM.md#create_path_link) - Creates symbolic links in system paths
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
