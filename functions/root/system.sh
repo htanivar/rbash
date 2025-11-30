@@ -10,7 +10,7 @@ set_hostname() {
     local new_hostname="$1"
     local fqdn="${2:-$new_hostname}"
 
-    require_root
+    must_be_root
 
     log_step "SYSTEM" "Setting hostname to: $new_hostname"
 
@@ -43,7 +43,7 @@ add_swap_memory() {
     local swap_size="${1:-2G}"
     local swap_file="${2:-/swapfile}"
 
-    require_root
+    must_be_root
 
     log_step "SYSTEM" "Adding swap memory: $swap_size"
 
@@ -79,7 +79,7 @@ add_swap_memory() {
 remove_swap_memory() {
     local swap_file="${1:-/swapfile}"
 
-    require_root
+    must_be_root
 
     log_step "SYSTEM" "Removing swap memory: $swap_file"
 
@@ -100,7 +100,7 @@ remove_swap_memory() {
 update_system() {
     local upgrade="${1:-true}"
 
-    require_root
+    must_be_root
 
     log_step "SYSTEM" "Updating system packages"
 
@@ -165,7 +165,7 @@ detect_package_manager() {
 
 # Clean system packages
 clean_system() {
-    require_root
+    must_be_root
 
     log_step "SYSTEM" "Cleaning system packages"
 
