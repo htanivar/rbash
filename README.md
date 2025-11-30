@@ -50,7 +50,8 @@ See [examples/error-functions.sh](examples/error-functions.sh) for error functio
 
 The project provides robust validation capabilities through `functions/validation.sh`:
 
-- [`require_root()`](docs/VALIDATION.md#require_root) - Validates that the script is run as root user
+- [`must_be_root()`](docs/VALIDATION.md#must_be_root) - Checks if the user is root
+- [`require_sudo()`](docs/VALIDATION.md#require_sudo) - Validates that the script is run as root user
 - [`require_non_root()`](docs/VALIDATION.md#require_non_root) - Validates that the script is NOT run as root user
 - [`require_var()`](docs/VALIDATION.md#require_var) - Validates that a required variable is set and not empty
 - [`require_command()`](docs/VALIDATION.md#require_command) - Validates that a required command is available in the
@@ -60,8 +61,7 @@ The project provides robust validation capabilities through `functions/validatio
 - [`check_file_permissions()`](docs/VALIDATION.md#check_file_permissions) - Validates file permissions (read, write,
   execute)
 - [`check_distribution()`](docs/VALIDATION.md#check_distribution) - Checks if the current distribution is in the
-  supported
-  list
+  supported list
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 
@@ -135,3 +135,19 @@ The project provides utility capabilities through `functions/utils.sh`:
 - [`generate_random_string()`](docs/UTILS.md#generate_random_string) - Generates random string
 
 See [examples/utils-functions.sh](examples/utils-functions.sh) for utility function usage examples.
+
+# ROOT only functions
+
+## User Management Functions
+
+The project provides user management capabilities through `functions/root/user.sh`:
+
+- [`create_user()`](docs/root/USER.md#create_user) - Creates a new user with specified options
+- [`create_admin_user()`](docs/root/USER.md#create_admin_user) - Creates a new admin user with sudo access
+- [`delete_user()`](docs/root/USER.md#delete_user) - Deletes a user account
+- [`add_user_to_group()`](docs/root/USER.md#add_user_to_group) - Adds a user to a group
+- [`remove_user_from_group()`](docs/root/USER.md#remove_user_from_group) - Removes a user from a group
+- [`setup_ssh_key()`](docs/root/USER.md#setup_ssh_key) - Sets up an SSH key for a user
+- [`generate_ssh_key()`](docs/root/USER.md#generate_ssh_key) - Generates an SSH key pair for a user
+
+See [examples/root/user-functions.sh](examples/root/user-functions.sh) for user management function usage examples.

@@ -3,7 +3,9 @@
 The project provides robust validation capabilities through `functions/validation.sh`:
 
 ## Table of Contents
-- [require_root](#require_root)
+
+- [must_be_root](#must_be_root)
+- [require_sudo](#require_sudo)
 - [require_non_root](#require_non_root)
 - [require_var](#require_var)
 - [require_command](#require_command)
@@ -14,15 +16,30 @@ The project provides robust validation capabilities through `functions/validatio
 
 ## Core Functions
 
-### require_root()
+### require_sudo()
 
 Validates that the script is run as root user.
 
 **Usage:**
 
 ```bash
-require_root
+require_sudo
 ```
+
+### must_be_root()
+
+Strictly requires that the script is run as root user (UID 0). Unlike `require_sudo()`, this function does not check for sudo availability or group membership. If not running as root, it will exit with an error message.
+
+**Usage:**
+
+```bash
+must_be_root
+```
+
+**Description:**
+This function checks if the effective user ID is 0 (root). If not, it prints an error message and exits with status code 1.
+
+**Note:** This is a stricter alternative to `require_sudo()` that doesn't attempt to validate sudo capabilities.
 
 ### require_non_root()
 

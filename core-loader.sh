@@ -45,3 +45,10 @@ for function_file in "$PROJECT_ROOT_DIR/functions"/*.sh; do
         source "$function_file"
     fi
 done
+
+# Source function files from subdirectories
+for function_file in "$PROJECT_ROOT_DIR/functions"/*/*.sh; do
+    if [ -f "$function_file" ]; then
+        source "$function_file"
+    fi
+done
