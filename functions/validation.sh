@@ -4,13 +4,31 @@
 # =============================================================================
 # VALIDATION FUNCTIONS
 # =============================================================================
+# Strictly require root user (UID 0)
+must_be_root() {
+    if [ "$EUID" -ne 0 ]; then
+        echo "Error: This script must be run as root. Use 'sudo $0' or run as root user." >&2
+        exit 1
+    fi
+}
 
 # Check if script is run as root
-require_root() {
-    if [ "$EUID" -ne 0 ]; then
-        error_exit "This script must be run as root. Use 'sudo $0' or run as root user."
-    fi
-    log_debug "Root privileges confirmed"
+require_sudo() {
+     if [ "$EUID" -eq 0 ]; then
+            log_debug "Already running as root"
+            return 0
+        fi
+
+        if ! command -v sudo >/dev/null 2>&1; then
+            error_exit "sudo is not available on this system"
+        fi
+
+        if groups | grep -q -E '\b(sudo|wheel|admin)\b'; then
+            log_debug "User has sudo group membership"
+            return 0
+        fi
+
+        error_exit "User does not have sudo access"
 }
 
 # Check if script is NOT run as root
@@ -85,4 +103,11 @@ check_distribution() {
     fi
 }
 
+# Strictly require root user (UID 0)
+must_be_root() {
+    if [ "$EUID" -ne 0 ]; then
+        echo "Error: This script must be run as root. Use 'sudo $0' or run as root user." >&2
+        exit 1
+    fi
+}
 
