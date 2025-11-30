@@ -6,7 +6,7 @@
 # =============================================================================
 
 # Check if script is run as root
-require_root() {
+require_sudo() {
     if [ "$EUID" -ne 0 ]; then
         error_exit "This script must be run as root. Use 'sudo $0' or run as root user."
     fi

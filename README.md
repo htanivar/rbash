@@ -50,7 +50,7 @@ See [examples/error-functions.sh](examples/error-functions.sh) for error functio
 
 The project provides robust validation capabilities through `functions/validation.sh`:
 
-- [`require_root()`](docs/VALIDATION.md#require_root) - Validates that the script is run as root user
+- [`require_sudo()`](docs/VALIDATION.md#require_sudo) - Validates that the script is run as root user
 - [`require_non_root()`](docs/VALIDATION.md#require_non_root) - Validates that the script is NOT run as root user
 - [`require_var()`](docs/VALIDATION.md#require_var) - Validates that a required variable is set and not empty
 - [`require_command()`](docs/VALIDATION.md#require_command) - Validates that a required command is available in the

@@ -11,7 +11,7 @@ echo "=== Validation Functions Examples ==="
 
 # Example 1: Check if running as non-root (comment out to test)
 log_step "1.a" "Checking if running as root"
-#require_root
+#require_sudo
 echo "✓ root validation passed"
 
 # Example 1: Check if running as non-root (comment out to test)

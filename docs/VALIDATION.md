@@ -3,7 +3,7 @@
 The project provides robust validation capabilities through `functions/validation.sh`:
 
 ## Table of Contents
-- [require_root](#require_root)
+- [require_sudo](#require_sudo)
 - [require_non_root](#require_non_root)
 - [require_var](#require_var)
 - [require_command](#require_command)
@@ -14,14 +14,14 @@ The project provides robust validation capabilities through `functions/validatio
 
 ## Core Functions
 
-### require_root()
+### require_sudo()
 
 Validates that the script is run as root user.
 
 **Usage:**
 
 ```bash
-require_root
+require_sudo
 ```
 
 ### require_non_root()
