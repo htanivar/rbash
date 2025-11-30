@@ -61,7 +61,8 @@ The project provides robust validation capabilities through `functions/validatio
 - [`check_file_permissions()`](docs/VALIDATION.md#check_file_permissions) - Validates file permissions (read, write,
   execute)
 - [`check_distribution()`](docs/VALIDATION.md#check_distribution) - Checks if the current distribution is in the
-  supported list
+  supported
+  list
 
 To use these functions in your scripts, first set `PROJECT_ROOT_DIR`:
 

@@ -103,11 +103,3 @@ check_distribution() {
     fi
 }
 
-# Strictly require root user (UID 0)
-must_be_root() {
-    if [ "$EUID" -ne 0 ]; then
-        echo "Error: This script must be run as root. Use 'sudo $0' or run as root user." >&2
-        exit 1
-    fi
-}
-
