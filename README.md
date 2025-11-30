@@ -138,6 +138,20 @@ See [examples/utils-functions.sh](examples/utils-functions.sh) for utility funct
 
 # ROOT only functions
 
+## System Management Functions
+
+The project provides system management capabilities through `functions/root/system.sh`:
+
+- [`set_hostname()`](docs/root/SYSTEM.md#set_hostname) - Sets the system hostname and updates /etc/hosts
+- [`set_fqdn()`](docs/root/SYSTEM.md#set_fqdn) - Sets the system FQDN and hostname
+- [`add_swap_memory()`](docs/root/SYSTEM.md#add_swap_memory) - Adds swap memory with specified size
+- [`remove_swap_memory()`](docs/root/SYSTEM.md#remove_swap_memory) - Removes swap memory and cleans up
+- [`update_system()`](docs/root/SYSTEM.md#update_system) - Updates system packages using the detected package manager
+- [`clean_system()`](docs/root/SYSTEM.md#clean_system) - Cleans system packages and cache
+- [`detect_package_manager()`](docs/root/SYSTEM.md#detect_package_manager) - Detects the system's package manager
+
+See [examples/root/system-functions.sh](examples/root/system-functions.sh) for system management function usage examples.
+
 ## User Management Functions
 
 The project provides user management capabilities through `functions/root/user.sh`:
