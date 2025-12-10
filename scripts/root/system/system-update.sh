@@ -5,7 +5,7 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)/core-loader.sh"
 
 prompt_input "Enter Remote username: " "REMOTE_USER" "ravi"
 require_var "REMOTE_USER"
-prompt_input "Enter Remote Host: " "REMOTE_HOST" "192.168.1.79"
+prompt_input "Enter Remote Host: " "REMOTE_HOST" ""
 require_var "REMOTE_HOST"
 
 must_be_root
