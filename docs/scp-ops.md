@@ -9,6 +9,8 @@ The project provides SCP (Secure Copy Protocol) operations capabilities through 
 - [copy_remote_directory()](#copy_remote_directory)
 - [copy_directory_to_remote()](#copy_directory_to_remote)
 - [test_ssh_connection()](#test_ssh_connection)
+- [create_remote_directory()](#create_remote_directory)
+- [create_remote_directories()](#create_remote_directories)
 - [Usage Examples](#usage-examples)
 - [Best Practices](#best-practices)
 
@@ -135,6 +137,64 @@ test_ssh_connection remote_user remote_host [ssh_options]
 **Example:**
 ```bash
 test_ssh_connection "user" "example.com"
+```
+
+### create_remote_directory()
+
+Create a directory on a remote host using SSH.
+
+**Syntax:**
+```bash
+create_remote_directory remote_user remote_host remote_path [ssh_options] [permissions] [owner] [group]
+```
+
+**Parameters:**
+- `remote_user`: Username on the remote host
+- `remote_host`: Hostname or IP address of the remote host
+- `remote_path`: Path to create on the remote host
+- `ssh_options` (optional): Additional SSH options
+- `permissions` (optional): Directory permissions (e.g., 755, 700)
+- `owner` (optional): Directory owner
+- `group` (optional): Directory group
+
+**Returns:**
+- `0` on success
+- `1` on failure
+
+**Example:**
+```bash
+# Create directory with default settings
+create_remote_directory "user" "example.com" "/home/user/data"
+
+# Create directory with specific permissions
+create_remote_directory "user" "example.com" "/home/user/data" "" "755"
+
+# Create directory with ownership and permissions
+create_remote_directory "user" "example.com" "/home/user/data" "" "755" "user" "user"
+```
+
+### create_remote_directories()
+
+Create multiple directories on a remote host using SSH.
+
+**Syntax:**
+```bash
+create_remote_directories remote_user remote_host ssh_options directory1 directory2 ...
+```
+
+**Parameters:**
+- `remote_user`: Username on the remote host
+- `remote_host`: Hostname or IP address of the remote host
+- `ssh_options` (optional): Additional SSH options
+- `directory1`, `directory2`, ...: Directories to create
+
+**Returns:**
+- `0` on success
+- `1` on failure
+
+**Example:**
+```bash
+create_remote_directories "user" "example.com" "" "/home/user/data" "/home/user/logs" "/home/user/config"
 ```
 
 ## Usage Examples
