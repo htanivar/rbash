@@ -16,6 +16,7 @@ put a ./ and then script name
 - [Path Functions](docs/PATH.md)
 - [OS Operation Functions](docs/OS_OPS.md)
 - [Network Functions](docs/NETWORK.md)
+- [SCP Operations Functions](docs/scp-ops.md)
 - [Utility Functions](docs/UTILS.md)
 
 ## Logging Functions
@@ -128,6 +129,18 @@ The project provides utility capabilities through `functions/network.sh`:
 - [`check_port()`](docs/UTILS.md#check_port) - Checks if port is available
 
 See [examples/network-functions.sh](examples/network-functions.sh) for utility function usage examples.
+
+## SCP Operations Functions
+
+The project provides SCP (Secure Copy Protocol) operations capabilities through `functions/scp_ops.sh`:
+
+- [`copy_remote_file()`](docs/scp-ops.md#copy_remote_file) - Copy file from remote host to local using scp
+- [`copy_to_remote()`](docs/scp-ops.md#copy_to_remote) - Copy file from local to remote host using scp
+- [`copy_remote_directory()`](docs/scp-ops.md#copy_remote_directory) - Copy directory recursively from remote to local
+- [`copy_directory_to_remote()`](docs/scp-ops.md#copy_directory_to_remote) - Copy directory recursively from local to remote
+- [`test_ssh_connection()`](docs/scp-ops.md#test_ssh_connection) - Test SSH connection to remote host
+
+See [examples/scp_ops-functions.sh](examples/scp_ops-functions.sh) for SCP operations function usage examples.
 
 ## Utility Functions
 
