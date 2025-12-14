@@ -1,0 +1,13 @@
+
+
+# Loop through all alias files ending in .sh in the modules directory
+if [ -d "$ALIAS_DIR" ]; then
+    log_debug "Attempt to load: $ALIAS_DIR"
+    for alias_file in "$ALIAS_DIR"/*.sh; do
+        log_debug "Found File : $alias_file"
+        if [ -f "$alias_file" ]; then
+            source "$alias_file"
+            log_debug "sourced : $alias_file"
+        fi
+    done
+fi
