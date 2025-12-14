@@ -11,6 +11,7 @@
 # Log file
 logs
 *.log
+command_log*
 
 # BlueJ files
 *.ctxt
