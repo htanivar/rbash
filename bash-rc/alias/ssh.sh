@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# --- SSH Shortcuts ---
+alias sshapi='ssh a_ravi@pi-dev'
+alias sshpi='ssh ravi@pi-dev'
+alias sshmx='ssh ravi@mx-linux'
+alias sshlx='ssh ravi@lx-dev'
+alias sshai='ssh ravi@ai-linux'
+alias sshln='ssh ravi@ln-linux'
+alias sshpr='ssh ravi@pr-linux'
+alias sshlocal='ssh a_ravi@localhost'
+alias sshz='ssh ravi@v-zorin'
+alias sshvs='ssh ravi@v-server'
+alias sshsmart='ssh artravi@ravinath-prod'
+alias sshprod='ssh ravi@ravinath-prod'
+alias sshprod-adm='ssh ravi_adm@ravinath-prod'
+alias sshprod-root='ssh administrator@ravinath-prod'
+alias sshlink-adm='ssh ravi-adm@link-prod'
+alias sshlink='ssh ravi@link-prod'
+alias sshtagavm='ssh ravi@vm-taga'
+alias sshtagaadmin='ssh admin-taga@31.97.62.187'
+alias sshtagasys='ssh sys-taga@31.97.62.187'
+alias sshtagadev='ssh dev-taga@31.97.62.187'
