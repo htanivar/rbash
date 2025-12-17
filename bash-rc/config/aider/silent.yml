@@ -1,0 +1,6 @@
+system_prompt: |
+  Output only the requested content.
+  No explanations.
+  No commentary.
+  Stop after output.
+model: deepseek/deepseek-coder

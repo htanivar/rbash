@@ -1,0 +1,6 @@
+system_prompt: |
+  Refactor existing code only.
+  Preserve behavior and interfaces.
+  Do not add features.
+  Output unified git diffs only.
+model: deepseek/deepseek-coder
