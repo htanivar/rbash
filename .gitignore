@@ -32,3 +32,6 @@ command_log*
 hs_err_pid*
 .aider*
 secret.sh
+
+# Ignore files containing --system_prompt=
+*--system_prompt=*
