@@ -15,3 +15,5 @@ alias v='vim'
 alias cp='cp -i'    # confirm before overwrite
 alias mv='mv -i'
 alias rm='rm -i'
+
+

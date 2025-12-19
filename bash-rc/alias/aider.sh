@@ -17,3 +17,5 @@ alias aider-refactor="aider -c $AIDER_CNF/refactor.yml --deepseek --show-diffs"
 alias aider-silent="aider -c $AIDER_CNF/silent.yml --deepseek --no-pretty"
 alias aider-reason="aider -c $AIDER_CNF/reasoning.yml --deepseek --no-pretty"
 
+alias aider-clean='find . -maxdepth 1 -type f -name "--system_prompt*" -exec rm -f -- {} +'
+
