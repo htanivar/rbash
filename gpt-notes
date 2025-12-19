@@ -1,0 +1,182 @@
+# GPT Notes: Templates for Requesting Help from LLM Models
+
+## Purpose
+This document provides structured templates to help you communicate effectively with LLM models (like GPT) when requesting assistance with bash scripts and other code-related tasks. Using these templates ensures clear context, precise requirements, and better results.
+
+## General Guidelines
+1. **Always specify the context**: Mention the operating system, shell, and any relevant environment details.
+2. **Reference specific files**: When asking about existing code, provide the file paths and relevant excerpts.
+3. **Be explicit about constraints**: State what should not be changed or what must be preserved.
+4. **Define the desired outcome**: Clearly explain what you want the code to accomplish.
+5. **Request step-by-step explanations when needed**: Ask for reasoning behind changes.
+
+## Template for Generating New Bash Scripts
+
+### Basic Template
+```
+Context:
+- OS: [e.g., Ubuntu 22.04]
+- Shell: [e.g., bash 5.1]
+- Working directory: [e.g., /home/user/project/scripts]
+- Constraints: [e.g., must be POSIX-compliant, no external dependencies]
+
+Request:
+Generate a bash script that [describe the script's purpose].
+
+Requirements:
+1. [Specific requirement 1]
+2. [Specific requirement 2]
+3. [Include error handling, logging, etc.]
+
+Deliverables:
+- The complete script code
+- Brief explanation of key parts
+- Usage instructions
+```
+
+### Advanced Template (with existing codebase)
+```
+Context:
+- OS: [Linux distribution and version]
+- Shell: [bash/zsh version]
+- Project structure: [brief description]
+- Relevant existing files: [list file paths with their purposes]
+
+Current Situation:
+[Describe what you have and what's not working or what you want to add]
+
+Request:
+Generate/modify a bash script to [specific goal].
+
+Requirements:
+1. Must integrate with existing files: [list files]
+2. Must follow patterns used in: [reference specific patterns]
+3. Must not modify: [list files or sections to preserve]
+4. Must include: [specific features like argument parsing, logging, etc.]
+
+Deliverables:
+- SEARCH/REPLACE blocks for all modified files
+- New file contents if creating from scratch
+- Explanation of changes
+- Testing instructions
+```
+
+## Template for Modifying Existing Bash Scripts
+
+```
+Context:
+- File to modify: [full path]
+- Current purpose: [what the script does]
+- Related files: [list with purposes]
+
+Current Issue/Improvement Needed:
+[Describe the problem or enhancement]
+
+Request:
+Modify the script to [specific change] while preserving [what must stay the same].
+
+Requirements:
+1. Change only [specific parts]
+2. Maintain compatibility with [dependencies or other scripts]
+3. Add/update [specific features]
+4. Follow existing code style: [mention style if any]
+
+Deliverables:
+- SEARCH/REPLACE block for the modified file
+- Explanation of each change
+- Impact on related functionality
+```
+
+## Template for Debugging Bash Scripts
+
+```
+Context:
+- Script location: [full path]
+- Error encountered: [paste error message]
+- Steps to reproduce: [detailed steps]
+- Environment: [OS, shell version, relevant variables]
+
+Current Script (relevant portion):
+```bash
+[paste the problematic code section]
+```
+
+Request:
+Identify and fix the issue in the script.
+
+Requirements:
+1. Preserve the overall script structure
+2. Explain the root cause
+3. Provide the corrected code
+4. Suggest preventive measures for similar issues
+
+Deliverables:
+- Corrected code section
+- Root cause analysis
+- Prevention tips
+```
+
+## Template for Code Review
+
+```
+Context:
+- Script location: [full path]
+- Script purpose: [brief description]
+- Target audience: [who will use/maintain it]
+
+Request:
+Perform a code review of this bash script.
+
+Focus Areas:
+1. Security best practices
+2. Performance optimizations
+3. Error handling robustness
+4. Code readability and maintainability
+5. Portability concerns
+
+Deliverables:
+- List of issues found (categorized by severity)
+- Specific recommendations for each issue
+- Code examples for fixes
+- Overall assessment
+```
+
+## Example: Requesting a New Backup Script
+
+```
+Context:
+- OS: Ubuntu 22.04
+- Shell: bash 5.1
+- Working directory: ~/scripts/
+- Constraints: Must use rsync, include logging, and support dry-run mode
+
+Request:
+Generate a bash script for backing up a directory to a remote server.
+
+Requirements:
+1. Accept source and destination as arguments
+2. Include --dry-run option to preview changes
+3. Log all operations to /var/log/backup.log
+4. Send email notification on completion (optional)
+5. Include proper error handling
+
+Deliverables:
+- Complete backup.sh script
+- Usage examples
+- Explanation of key functions
+```
+
+## Important Notes
+- **Always verify generated code** before executing in production environments
+- **Test thoroughly** in a safe environment first
+- **Provide feedback** to improve future interactions
+- **Update these templates** as you discover better communication patterns
+
+## When Providing Files to LLM
+1. Share only relevant portions of code
+2. Include surrounding context when necessary
+3. Mention file permissions and execution requirements
+4. Specify any dependencies or prerequisites
+```
+
+This template collection helps ensure that requests to LLMs are structured, complete, and yield the most useful results while avoiding unintended modifications.
