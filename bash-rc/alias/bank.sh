@@ -21,3 +21,5 @@ alias r-equitas='google-chrome --user-data-dir="$HOME/.config/google-chrome/ravi
 alias a-equitas='google-chrome --user-data-dir="$HOME/.config/google-chrome/arthi" https://equitas.bank.in/ &'
 alias h-equitas='google-chrome --user-data-dir="$HOME/.config/google-chrome/huf" https://equitas.bank.in/ &'
 
+alias a-kite='google-chrome --user-data-dir="$HOME/.config/google-chrome/arthi" https://kite.zerodha.com/ &'
+alias a-angel='google-chrome --user-data-dir="$HOME/.config/google-chrome/arthi" https://www.angelone.in/ &'
