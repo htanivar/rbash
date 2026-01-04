@@ -23,3 +23,6 @@ alias h-equitas='google-chrome --user-data-dir="$HOME/.config/google-chrome/huf"
 
 alias a-kite='google-chrome --user-data-dir="$HOME/.config/google-chrome/arthi" https://kite.zerodha.com/ &'
 alias a-angel='google-chrome --user-data-dir="$HOME/.config/google-chrome/arthi" https://www.angelone.in/ &'
+
+
+alias r-yesbank='google-chrome --user-data-dir="$HOME/.config/google-chrome/ravi" https://www.yes.bank.in/ &'
