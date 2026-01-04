@@ -18,3 +18,14 @@ alias rm='rm -i'
 
 
 
+# --- Find Prefix ---
+alias shoppingSites="compgen -a | grep '^sh-'"
+alias dealSites="compgen -a | grep '^dl-'"
+alias travelSites="compgen -a | grep '^tr-'"
+alias accomodationSites="compgen -a | grep '^ac-'"
+alias IndianGovSites="compgen -a | grep '^in-'"
+alias TNGovSites="compgen -a | grep '^tn-'"
+alias courtSites="compgen -a | grep -E '^(sc|hc|tn|law)-' | sort"
+
+
+alias sites="compgen -a | grep 'Sites$'"
