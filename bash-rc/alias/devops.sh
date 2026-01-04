@@ -13,3 +13,6 @@ alias gitlab='firefox -P "ravi" https://gitlab.com &'
 alias learn='firefox -P "ravi" https://learn.jaganathan.co.uk &'
 alias veda='firefox -P "ravi" https://veda.jaganathan.co.uk &'
 alias local-rbot='firefox -P "ravi" http://localhost:1717/swagger/index.html &'
+
+
+
