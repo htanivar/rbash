@@ -22,3 +22,45 @@ alias taga-vm='ssh ravi@vm-taga'
 export PUBLISH_PROD_USER="ravi_adm"
 export PUBLISH_PROD_HOST="ravinath-prod"
 export PUBLISH_PROD_PATH="/apps/nammataga"
+
+alias swaggerLocalTaga='firefox -P ravi http://localhost:1801/swagger/index.html &'
+alias swaggerDevTaga='firefox -P ravi https://devapi.nammataga.com/swagger/index.html &'
+alias swaggerTstTaga='firefox -P ravi https://tstapi.nammataga.com/swagger/index.html &'
+
+startLocalTaga() {
+    # Move to folder
+    tagaApi
+
+    if [ $? -eq 0 ]; then
+        echo "Successfully moved to: $(pwd)"
+
+        # Check for the correct filename: dev-ops.sh
+        if [ -f "./dev-ops.sh" ]; then
+            chmod +x ./dev-ops.sh
+            ./dev-ops.sh start
+        else
+            echo "Error: 'dev-ops.sh' not found in $(pwd)"
+        fi
+    else
+        echo "Error: Failed to change directory."
+    fi
+}
+
+killLocalTaga() {
+    # Move to folder
+    tagaApi
+
+    if [ $? -eq 0 ]; then
+        echo "Successfully moved to: $(pwd)"
+
+        # Check for the correct filename: dev-ops.sh
+        if [ -f "./dev-ops.sh" ]; then
+            chmod +x ./dev-ops.sh
+            ./dev-ops.sh kill
+        else
+            echo "Error: 'dev-ops.sh' not found in $(pwd)"
+        fi
+    else
+        echo "Error: Failed to change directory."
+    fi
+}
