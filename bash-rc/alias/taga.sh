@@ -3,7 +3,7 @@
 alias taga-info='cat secret | grep taga'
 alias taga-domain='firefox -P "ravi" https://www.godaddy.com &'
 alias taga-host='firefox -P "ravi" https://hpanel.hostinger.com/vps/992688/overview &'
-alias taga-github='firefox -P "ravi" https://www.github.com/nammataga &'
+alias taga-github='firefox -P "nammataga" https://www.github.com/nammataga &'
 alias taga-cloudflare='firefox -P "ravi" https://dash.cloudflare.com &'
 
 # --- Local Navigation ---
