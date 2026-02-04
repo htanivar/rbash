@@ -119,6 +119,9 @@ for software in "${(@k)SOFTWARE}"; do
 done
 
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
 echo -e "${GREEN}PATH setup complete!${NC}"
