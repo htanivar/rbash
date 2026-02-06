@@ -6,6 +6,7 @@
 
 # Base directory for software installations
 OPT_DIR="/apps"
+GO_VERSION="go1.24.12"
 
 # Directory for soft links
 SLINK_BIN_DIR="$HOME/bin"
@@ -95,13 +96,17 @@ check_and_add_path() {
             ;;
         # ...
         "go")
-            export GOROOT="$OPT_DIR/go"
-            export GOPATH="$HOME/go"
-            # Apply the same check for GOPATH/bin
-            if ! echo "$PATH" | grep -q "$GOPATH/bin"; then
-                export PATH="$GOPATH/bin:$PATH"
-            fi
-            ;;
+           export GOROOT="$OPT_DIR/go/$GO_VERSION"
+               export GOPATH="$HOME/go"
+
+               if ! echo "$PATH" | grep -q "$GOROOT/bin"; then
+                   export PATH="$GOROOT/bin:$PATH"
+               fi
+           
+               if ! echo "$PATH" | grep -q "$GOPATH/bin"; then
+                   export PATH="$GOPATH/bin:$PATH"
+               fi
+               ;;
         esac
     else
         echo -e "${RED}✗${NC} $software not found at $full_path"
