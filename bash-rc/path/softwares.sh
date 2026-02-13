@@ -7,6 +7,7 @@
 # Base directory for software installations
 OPT_DIR="/apps"
 GO_VERSION="go1.24.12"
+JDK_VERSION="17.0.17"
 
 # Directory for soft links
 SLINK_BIN_DIR="$HOME/bin"
@@ -21,10 +22,13 @@ declare -A SOFTWARE=(
     ["goland"]="goland/bin:goland.sh"
     ["go"]="go/go1.24.12/bin:go"
     ["flutter"]="flutter/bin:flutter"
-    ["java"]="jdk-21.0.9/bin:java"
+    ["java"]="java/jdk-${JDK_VERSION}/bin:java"
     ["gradle"]="gradle/gradle-9.2.0/bin:gradle"
     ["maven"]="maven/bin:mvn"
 )
+
+
+
 
 # Colors for output
 RED='\033[0;31m'
