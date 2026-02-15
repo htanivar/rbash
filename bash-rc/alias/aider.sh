@@ -7,6 +7,7 @@ export AIDER_CNF="$HOME/.aider"
 
 # Aider aliases (Aider 0.86.1 compatible, DeepSeek)
 
+alias aider-bash="aider -c $AIDER_CNF/bash.yml --deepseek --no-pretty --show-diffs"
 alias aider-code="aider -c $AIDER_CNF/coding.yml --deepseek --no-pretty --show-diffs"
 alias aider-docs="aider -c $AIDER_CNF/tech_docs.yml --deepseek"
 alias aider-arch="aider -c $AIDER_CNF/architecture.yml --deepseek"
