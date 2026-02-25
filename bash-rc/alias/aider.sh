@@ -10,6 +10,17 @@ for cmd in bash code docs arch user legal devops refactor silent reason flutter 
     unalias "aider-$cmd" 2>/dev/null
 done
 
+# Docker Expert
+aider-docker() {
+    export AIDER_SYSTEM_PROMPT="You are an expert Docker and container infrastructure specialist. No preamble or explanations. Use concise, direct tone. Minimize output tokens while maintaining 100% accuracy. No comments. Output only valid Dockerfiles, compose files, or diffs."
+    export AIDER_MODEL="deepseek/deepseek-coder"
+    export AIDER_EDIT_FORMAT="diff"
+    export AIDER_ATTRIBUTE_AUTHOR="true"
+    export AIDER_SUGGEST_SHELL_COMMANDS="false"
+    export AIDER_NO_PRETTY="true"
+    command aider --show-diffs "$@"
+}
+
 # Bash function
 aider-bash() {
     export AIDER_SYSTEM_PROMPT="You are a bash scripting expert. Output only valid bash scripts or unified diffs. Use POSIX-compliant shell where possible. No explanations. Include error handling."
@@ -314,6 +325,7 @@ aider-help() {
     echo "Aider Functions (Environment Variable Based)"
     echo "============================================"
     echo "Available commands:"
+    echo "  aider-docker   - Docker expert"
     echo "  aider-bash     - Bash scripting expert"
     echo "  aider-code     - Full Stack Engineer"
     echo "  aider-docs     - Technical documentation"
