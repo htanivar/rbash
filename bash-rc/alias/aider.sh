@@ -159,6 +159,27 @@ aider-react() {
     command aider "$@"
 }
 
+aider-nextjs() {
+    export AIDER_SYSTEM_PROMPT="You are a Senior Next.js Architect (App Router specialist).
+Rules:
+- Default to React Server Components (RSC). Use 'use client' only for interactivity (hooks/events).
+- Use TypeScript interfaces for all Props and Data structures.
+- Use Tailwind CSS for styling; prioritize a clean, accessible UI.
+- Follow Next.js 14+ file-based routing conventions (page.tsx, layout.tsx, loading.tsx).
+- Handle 'null' and 'undefined' states for profile data fetching.
+- Output clean, modular code. Brief technical summaries of changes are allowed after the code."
+
+    # Recommendation: If you are seeing many mistakes with DeepSeek,
+    # try Claude 3.5 Sonnet (the current king of Next.js logic).
+    export AIDER_MODEL="openrouter/anthropic/claude-3.5-sonnet"
+    export AIDER_EDIT_FORMAT="diff"
+    export AIDER_ATTRIBUTE_AUTHOR="true"
+    export AIDER_SUGGEST_SHELL_COMMANDS="false"
+    export AIDER_NO_PRETTY="true"
+
+    command aider "$@"
+}
+
 # Test function (for writing tests)
 aider-test() {
     export AIDER_SYSTEM_PROMPT="You are a testing expert. Follow these rules:
@@ -228,6 +249,7 @@ aider-debug() {
             reason)    local prompt="You are a reasoning expert..." ;;
             flutter)   local prompt="You are a Flutter expert. Code only. No words." ;;
             react)     local prompt="You are a React/TypeScript expert..." ;;
+            nextjs)     local prompt="You are a NextJS/TypeScript expert..." ;;
             test)      local prompt="You are a testing expert..." ;;
             auto)      local prompt="You are an automation expert..." ;;
         esac
