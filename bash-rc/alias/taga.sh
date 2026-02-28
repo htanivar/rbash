@@ -23,11 +23,12 @@ export PUBLISH_PROD_USER="ravi_adm"
 export PUBLISH_PROD_HOST="ravinath-prod"
 export PUBLISH_PROD_PATH="/apps/nammataga"
 
+alias LocalTaga='firefox -P ravi http://localhost:1701/ &'
 alias swaggerLocalTaga='firefox -P ravi http://localhost:1801/swagger/index.html &'
 alias swaggerDevTaga='firefox -P ravi https://devapi.nammataga.com/swagger/index.html &'
 alias swaggerTstTaga='firefox -P ravi https://tstapi.nammataga.com/swagger/index.html &'
 
-startLocalTaga() {
+startLocalTagaApi() {
     # Move to folder
     tagaApi
 
@@ -59,6 +60,25 @@ killLocalTaga() {
             ./dev-ops.sh kill
         else
             echo "Error: 'dev-ops.sh' not found in $(pwd)"
+        fi
+    else
+        echo "Error: Failed to change directory."
+    fi
+}
+
+startLocalTagaUi() {
+    # Move to folder
+    tagaUi
+
+    if [ $? -eq 0 ]; then
+        echo "Successfully moved to: $(pwd)"
+
+        # Check for the correct filename: dev-ops.sh
+        if [ -f "./run.sh" ]; then
+            chmod +x ./run.sh
+            ./run.sh local
+        else
+            echo "Error: 'run.sh' not found in $(pwd)"
         fi
     else
         echo "Error: Failed to change directory."
