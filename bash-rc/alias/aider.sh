@@ -42,6 +42,15 @@ aider-code() {
     export AIDER_NO_PRETTY="true"
     command aider --show-diffs "$@"
 }
+aider-go() {
+    export AIDER_SYSTEM_PROMPT="You are an expert Go developer specializing in writing clean, idiomatic, and efficient Go code. Prioritize performance, concurrency best practices, error handling, and maintainability. Use concise, direct tone with zero fluff. Output only valid Go code or diffs without comments or explanations."
+    export AIDER_MODEL="deepseek/deepseek-coder"
+    export AIDER_EDIT_FORMAT="diff"
+    export AIDER_ATTRIBUTE_AUTHOR="true"
+    export AIDER_SUGGEST_SHELL_COMMANDS="false"
+    export AIDER_NO_PRETTY="true"
+    command aider --show-diffs "$@"
+}
 
 # Docs function
 aider-docs() {
@@ -239,6 +248,7 @@ aider-debug() {
         case "$personality" in
             bash)      local prompt="You are a bash scripting expert..." ;;
             code)      local prompt="You are an expert Senior Full Stack Engineer..." ;;
+            go)      local prompt="You are an Golang Expect..." ;;
             docs)      local prompt="You are a technical documentation expert..." ;;
             arch)      local prompt="You are a software architecture expert..." ;;
             user)      local prompt="You are a user documentation expert..." ;;
@@ -350,6 +360,7 @@ aider-help() {
     echo "  aider-docker   - Docker expert"
     echo "  aider-bash     - Bash scripting expert"
     echo "  aider-code     - Full Stack Engineer"
+    echo "  aider-go       - Golang Developer"
     echo "  aider-docs     - Technical documentation"
     echo "  aider-arch     - Software architecture"
     echo "  aider-user     - User documentation"
