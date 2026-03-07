@@ -1,22 +1,25 @@
 #!/bin/bash
 # --- Infra ---
 #alias lakshmi-info='cat secret | grep lakshmi'
-#alias lakshmi-domain='firefox -P "lakshmi" https://www.godaddy.com &'
-#alias lakshmi-host='firefox -P "lakshmi" https://hpanel.hostinger.com/vps/992688/overview &'
-#alias lakshmi-github='firefox -P "lakshmi" https://www.github.com/nammalakshmi &'
-#alias lakshmi-cloudflare='firefox -P "lakshmi" https://dash.cloudflare.com &'
+alias lakshmi-mail='firefox -P "lakshmi" https://www.gmail.com &'
+alias lakshmi-domain='firefox -P "lakshmi" https://www.godaddy.com &'
+alias lakshmi-host='firefox -P "lakshmi" https://hpanel.hostinger.com/vps/1468325/overview &'
+alias lakshmi-github='firefox -P "lakshmi" https://www.github.com/ &'
+alias lakshmi-cloudflare='firefox -P "lakshmi" https://dash.cloudflare.com &'
 
 # --- Local Navigation ---
+
+
 alias lakshmiBackoffice='cd ~/code/github/lakshmi-traders/backoffice'
 alias lakshmiMobile='cd ~/code/github/lakshmi-traders/mobile-app'
 
 
 # --- Remote Navigation ---
-#alias lakshmi-root='ssh root@lakshmi-prod'
-#alias lakshmi-admin='ssh admin-lakshmi@lakshmi-prod'
-#alias lakshmi-sys='ssh sys-lakshmi@lakshmi-prod'
-#alias lakshmi-dev='ssh dev@lakshmi-prod'
-#alias lakshmi-vm='ssh ravi@vm-lakshmi'
+alias lakshmi-root='ssh root@lakshmi-prod'
+alias lakshmi-admin='ssh ravi-adm@lakshmi-prod'
+alias lakshmi-sys='ssh sys-lakshmi@lakshmi-prod'
+alias lakshmi-dev='ssh dev@lakshmi-prod'
+alias lakshmi-ravi='ssh ravi@lakshmi-prod'
 
 # For Production
 #export PUBLISH_PROD_USER="ravi_adm"
