@@ -26,7 +26,7 @@ alias lakshmi-ravi='ssh ravi@lakshmi-prod'
 #export PUBLISH_PROD_HOST="ravinath-prod"
 #export PUBLISH_PROD_PATH="/apps/nammalakshmi"
 #
-alias web-dev-lakshmi='firefox -P lakshmi http://148.230.66.115:3000/ &'
+alias web-dev-lakshmi='firefox -P lakshmi http://lakshmi-prod:3000/ &'
 #alias swaggerLocallakshmi='firefox -P lakshmi http://localhost:2801/swagger/index.html &'
 #alias swaggerDevlakshmi='firefox -P lakshmi https://devapi.nammalakshmi.com/swagger/index.html &'
 #alias swaggerTstlakshmi='firefox -P lakshmi https://tstapi.nammalakshmi.com/swagger/index.html &'
