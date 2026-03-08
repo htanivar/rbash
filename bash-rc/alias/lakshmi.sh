@@ -16,7 +16,7 @@ alias lakshmiMobile='cd ~/code/github/lakshmi-traders/mobile-app'
 
 # --- Remote Navigation ---
 alias lakshmi-root='ssh root@lakshmi-prod'
-alias lakshmi-admin='ssh ravi-adm@lakshmi-prod'
+alias lsshadmin='ssh ravi-adm@lakshmi-prod'
 alias lakshmi-sys='ssh sys-lakshmi@lakshmi-prod'
 alias lsshdev='ssh dev@lakshmi-prod'
 alias lakshmi-ravi='ssh ravi@lakshmi-prod'
