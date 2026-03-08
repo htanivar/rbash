@@ -18,7 +18,7 @@ alias lakshmiMobile='cd ~/code/github/lakshmi-traders/mobile-app'
 alias lakshmi-root='ssh root@lakshmi-prod'
 alias lakshmi-admin='ssh ravi-adm@lakshmi-prod'
 alias lakshmi-sys='ssh sys-lakshmi@lakshmi-prod'
-alias lakshmi-dev='ssh dev@lakshmi-prod'
+alias ssh-dev-lakshmi='ssh dev@lakshmi-prod'
 alias lakshmi-ravi='ssh ravi@lakshmi-prod'
 
 # For Production
@@ -26,7 +26,7 @@ alias lakshmi-ravi='ssh ravi@lakshmi-prod'
 #export PUBLISH_PROD_HOST="ravinath-prod"
 #export PUBLISH_PROD_PATH="/apps/nammalakshmi"
 #
-#alias Locallakshmi='firefox -P lakshmi http://localhost:2701/ &'
+alias web-dev-lakshmi='firefox -P lakshmi http://148.230.66.115:3000/ &'
 #alias swaggerLocallakshmi='firefox -P lakshmi http://localhost:2801/swagger/index.html &'
 #alias swaggerDevlakshmi='firefox -P lakshmi https://devapi.nammalakshmi.com/swagger/index.html &'
 #alias swaggerTstlakshmi='firefox -P lakshmi https://tstapi.nammalakshmi.com/swagger/index.html &'
