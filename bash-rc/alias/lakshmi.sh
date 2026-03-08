@@ -87,3 +87,16 @@ alias web-dev-lakshmi='firefox -P lakshmi http://lakshmi-prod:3000/ &'
 #        echo "Error: Failed to change directory."
 #    fi
 #}
+
+alias abacus='firefox -P "lakshmi" https://apps.abacus.ai &'
+alias deepseek='firefox -P "lakshmi" https://chat.deepseek.com &'
+alias perp='firefox -P "lakshmi" https://perplexity.ai &'
+alias gemini='firefox -P "lakshmi" https://gemini.google.com &'
+alias aistudio='firefox -P "lakshmi" https://aistudio.google.com &'
+alias chatgpt='firefox -P "lakshmi" https://chat.openai.com &'
+alias claude='firefox -P "lakshmi" https://claude.ai &'
+alias gemini='firefox -P "lakshmi" https://gemini.google.com &'
+alias copilot='firefox -P "lakshmi" https://copilot.microsoft.com &'
+alias pi='firefox -P "lakshmi" https://pi.ai &'
+alias you='firefox -P "lakshmi" https://you.com &'
+alias poe='firefox -P "lakshmi" https://poe.com &'
