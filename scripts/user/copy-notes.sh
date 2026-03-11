@@ -121,7 +121,7 @@ if [ $MKDIR_EXIT -ne 0 ]; then
     echo "Continuing, but sync may fail..."
 fi
 
-# Function to backup deleted files
+# Function to backup deleted files using rsync
 backup_deleted_files() {
     local source_dir="$1"
     local remote_path="$2"
@@ -179,25 +179,42 @@ backup_deleted_files() {
         local backup_dir="$DELETED_DIR/${TIMESTAMP}_${basename}"
         mkdir -p "$backup_dir"
         
-        # Download each file before it gets deleted
+        # Create a temporary file list for rsync
+        local rsync_filelist=$(mktemp)
+        # Write each file to the list, one per line
         while IFS= read -r file; do
             if [ -n "$file" ]; then
-                local remote_file="$remote_path/$file"
-                local local_backup="$backup_dir/$file"
-                
-                # Create directory structure in backup
-                mkdir -p "$(dirname "$local_backup")"
-                
-                log_message "Backing up deleted file: $file"
-                scp -o ControlPath="$SSH_CONTROL_PATH" \
-                    "$REMOTE_USER@$REMOTE_HOST:\"$remote_file\"" "$local_backup" 2>/dev/null
-                if [ $? -eq 0 ]; then
-                    log_message "Successfully backed up: $file"
-                else
-                    log_message "Failed to backup: $file"
-                fi
+                echo "$file" >> "$rsync_filelist"
             fi
         done < "$to_delete_list"
+        
+        log_message "Backing up deleted files using rsync..."
+        
+        # Build exclude options for rsync
+        local RSYNC_EXCLUDE_OPTS=()
+        for pattern in "${EXCLUDE_PATTERNS[@]}"; do
+            RSYNC_EXCLUDE_OPTS+=(--exclude="$pattern")
+        done
+        
+        # Use rsync to copy files from remote to local backup directory
+        # --files-from reads the list of files to transfer
+        # --relative preserves the directory structure
+        rsync -avz --relative \
+            "${RSYNC_EXCLUDE_OPTS[@]}" \
+            --files-from="$rsync_filelist" \
+            -e "ssh -o ControlPath=\"$SSH_CONTROL_PATH\"" \
+            "$REMOTE_USER@$REMOTE_HOST:$remote_path/" \
+            "$backup_dir/" 2>&1 | tee -a "$LOG_FILE"
+        
+        local RSYNC_BACKUP_EXIT=$?
+        if [ $RSYNC_BACKUP_EXIT -eq 0 ]; then
+            log_message "Successfully backed up deleted files to: $backup_dir"
+        else
+            log_message "Failed to backup some files (rsync exit code: $RSYNC_BACKUP_EXIT)"
+        fi
+        
+        # Clean up temporary file
+        rm -f "$rsync_filelist"
         
         log_message "Deleted files backed up to: $backup_dir"
     else
