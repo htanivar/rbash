@@ -33,8 +33,7 @@ ssh -o ControlMaster=yes -o ControlPersist=10m -o ControlPath=~/.ssh/cm-%r@%h:%p
 
 log_step "COPY-PROFILE" "Starting to copy bash files"
 
-# Prepare source files list for rsync
-# Change to home directory to use relative paths
+# Change to home directory to use relative paths for rsync
 pushd "$HOME" > /dev/null
 
 # Use rsync to copy all files at once
@@ -42,8 +41,15 @@ pushd "$HOME" > /dev/null
 # -v: verbose
 # -z: compress during transfer
 # -e: specify SSH options to use the control master
-log_command "  rsync -avz -e 'ssh -o ControlPath=~/.ssh/cm-%r@%h:%p' ${RC_FILES[*]} $REMOTE_USER@$REMOTE_HOST:~/"
-rsync -avz -e "ssh -o ControlPath=~/.ssh/cm-%r@%h:%p" "${RC_FILES[@]}" "$REMOTE_USER@$REMOTE_HOST:~/"
+# --progress: show progress during transfer
+log_command "rsync -avz -e \"ssh -o ControlPath=~/.ssh/cm-%r@%h:%p\" \"${RC_FILES[@]}\" \"$REMOTE_USER@$REMOTE_HOST:~/\""
+if ! rsync -avz -e "ssh -o ControlPath=~/.ssh/cm-%r@%h:%p" "${RC_FILES[@]}" "$REMOTE_USER@$REMOTE_HOST:~/"; then
+    log_error "rsync failed"
+    popd > /dev/null
+    # Close master connection before exiting
+    ssh -O exit -o ControlPath=~/.ssh/cm-%r@%h:%p "$REMOTE_USER@$REMOTE_HOST" 2>/dev/null || true
+    exit 1
+fi
 
 popd > /dev/null
 
