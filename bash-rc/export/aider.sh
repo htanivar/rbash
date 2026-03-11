@@ -3,7 +3,7 @@
 # Slim + code-focused DeepSeek setup for Aider
 
 export OPENAI_API_BASE="https://api.deepseek.com"
-export OPENAI_API_KEY="YOUR_DEEPSEEK_API_KEY"
+#export OPENAI_API_KEY="YOUR_DEEPSEEK_API_KEY"
 
 # Lowest chatter, best for pure coding
 export OPENAI_MODEL="deepseek-coder"

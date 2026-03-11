@@ -1,0 +1,104 @@
+# ==============================================================================
+#  ~/.commonrc  |  Shared config for Bash and Zsh
+# ==============================================================================
+#  This file is for settings that work in both Bash and Zsh, such as aliases,
+#  environment variables, and PATH modifications. Shell-specific features
+#  should be kept in ~/.bashrc or ~/.zshrc.
+# ==============================================================================
+DEBUG_SHELL=${DEBUG_SHELL:-0}
+
+# Function to print debug messages only if DEBUG_SHELL is set to 1
+log_debug () {
+    # Check if the DEBUG_SHELL variable is set to 1
+    if [ "$DEBUG_SHELL" -eq 1 ]; then
+        # Print the message, prefixed with [DEBUG] and a timestamp for clarity
+        echo "[DEBUG] $(date +'%H:%M:%S') $1" >&2
+    fi
+}
+
+# ==============================================================================
+#  Environment Variables
+# ==============================================================================
+
+
+RC_DIR="/home/ravi/code/github/htanivar/rbash/bash-rc"
+
+CONFIG_DIR="$RC_DIR/config"
+PATH_DIR="$RC_DIR/path"
+LINK_DIR="$RC_DIR/link"
+EXPORT_DIR="$RC_DIR/export"
+ALIAS_DIR="$RC_DIR/alias"
+SECRET_FILE="$HOME/.secrets/secrets.sh"
+
+
+echo "*** loaded secrets file from : $SECRET_FILE ***"
+source "$SECRET_FILE"
+
+# Loop through all config files ending in .sh in the modules directory
+if [ -d "$CONFIG_DIR" ]; then
+    log_debug "Attempt to load: $CONFIG_DIR"
+    for config_file in "$CONFIG_DIR"/*.sh; do
+        log_debug "Found File : $config_file"
+        if [ -f "$config_file" ]; then
+            source "$config_file"
+            log_debug "sourced : $config_file"
+        fi
+    done
+fi
+
+
+# Loop through all path files ending in .sh in the modules directory
+if [ -d "$PATH_DIR" ]; then
+    log_debug "Attempt to load: $PATH_DIR"
+    for path_file in "$PATH_DIR"/*.sh; do
+        log_debug "Found File : $path_file"
+        if [ -f "$path_file" ]; then
+            source "$path_file"
+            log_debug "sourced : $path_file"
+        fi
+    done
+fi
+
+
+
+# Loop through all link files ending in .sh in the modules directory
+if [ -d "$LINK_DIR" ]; then
+    log_debug "Attempt to load: $LINK_DIR"
+    for link_file in "$LINK_DIR"/*.sh; do
+        log_debug "Found File : $link_file"
+        if [ -f "$link_file" ]; then
+            source "$link_file"
+            log_debug "sourced : $link_file"
+        fi
+    done
+fi
+
+
+# Loop through all export files ending in .sh in the modules directory
+if [ -d "$EXPORT_DIR" ]; then
+    log_debug "Attempt to load: $EXPORT_DIR"
+    for export_file in "$EXPORT_DIR"/*.sh; do
+        log_debug "Found File : $export_file"
+        if [ -f "$export_file" ]; then
+            source "$export_file"
+            log_debug "sourced : $export_file"
+        fi
+    done
+fi
+
+
+
+
+# Loop through all alias files ending in .sh in the modules directory
+if [ -d "$ALIAS_DIR" ]; then
+    log_debug "Attempt to load: $ALIAS_DIR"
+    for alias_file in "$ALIAS_DIR"/*.sh; do
+        log_debug "Found File : $alias_file"
+        if [ -f "$alias_file" ]; then
+            source "$alias_file"
+            log_debug "sourced : $alias_file"
+        fi
+    done
+fi
+
+
