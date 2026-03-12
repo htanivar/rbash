@@ -1,6 +1,7 @@
 services:
   docker-linux:
     build: ./linux
+    platform: linux/arm64  # change the platform to required
     image: ubuntu:24.04
     container_name: root-linux
     mem_limit: 256m
