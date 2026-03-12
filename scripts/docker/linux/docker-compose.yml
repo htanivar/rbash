@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  dev:
+    build: ../../..
+    container_name: minimal-linux-dev
+    mem_limit: 256m
+    mem_reservation: 128m
+    cpus: '0.5'
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+  tst:
+    build: ../../..
+    container_name: minimal-linux-tst
+    mem_limit: 256m
+    mem_reservation: 128m
+    cpus: '0.5'
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+  stg:
+    build: ../../..
+    container_name: minimal-linux-stg
+    mem_limit: 256m
+    mem_reservation: 128m
+    cpus: '0.5'
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+  prd:
+    build: ../../..
+    container_name: minimal-linux-prd
+    mem_limit: 256m
+    mem_reservation: 128m
+    cpus: '0.5'
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
