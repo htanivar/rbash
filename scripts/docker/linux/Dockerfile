@@ -5,6 +5,7 @@ FROM alpine:latest
 RUN apk update && apk add --no-cache \
     bash \
     curl \
+    jq \
     openssh \
     && rm -rf /var/cache/apk/*
 
