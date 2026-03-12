@@ -1,37 +1,7 @@
 services:
-  dev:
+  docker-linux:
     image: alpine:latest  # or ubuntu:latest, debian:latest, etc.
-    container_name: minimal-linux-dev
-    mem_limit: 256m
-    mem_reservation: 128m
-    cpus: '0.5'
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
-
-  tst:
-    image: alpine:latest
-    container_name: minimal-linux-tst
-    mem_limit: 256m
-    mem_reservation: 128m
-    cpus: '0.5'
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
-
-  stg:
-    image: alpine:latest
-    container_name: minimal-linux-stg
-    mem_limit: 256m
-    mem_reservation: 128m
-    cpus: '0.5'
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
-
-  prd:
-    image: alpine:latest
-    container_name: minimal-linux-prd
+    container_name: root-linux
     mem_limit: 256m
     mem_reservation: 128m
     cpus: '0.5'
