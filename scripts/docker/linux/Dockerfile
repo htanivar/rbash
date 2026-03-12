@@ -2,23 +2,21 @@
 FROM ubuntu:24.04
 
 # Update package list and install essential packages
-RUN apk update && apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     bash \
     curl \
     jq \
-    openssh \
-    && rm -rf /var/cache/apk/*
+    openssh-server \
+    && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH
-RUN ssh-keygen -A && \
-    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
-    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+RUN mkdir /var/run/sshd && \
+    echo 'root:password' | chpasswd && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
-# Set root password (change 'root' to your desired password)
-RUN echo "root:root" | chpasswd
-
-# Expose SSH port
+# Expose port 22 inside the container
 EXPOSE 22
 
-# Start SSH daemon and keep container running
+# Start SSH daemon
 CMD ["/usr/sbin/sshd", "-D"]
