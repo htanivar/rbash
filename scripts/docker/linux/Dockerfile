@@ -22,8 +22,8 @@ RUN mkdir /var/run/sshd && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
     sed -i 's/#ListenAddress 0.0.0.0/ListenAddress 0.0.0.0/' /etc/ssh/sshd_config
 
-# Create symbolic link for vi
-RUN ln -s /usr/bin/vim /usr/bin/vi
+# Remove and Create symbolic link for vi
+RUN rm -f /usr/bin/vi && ln -s /usr/bin/vim /usr/bin/vi
 
 # Create a simple startup script
 RUN echo '#!/bin/bash\n/usr/sbin/sshd -D' > /start.sh && chmod +x /start.sh
