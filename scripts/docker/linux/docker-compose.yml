@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   dev:
-    build: ../../..
+    image: alpine:latest  # or ubuntu:latest, debian:latest, etc.
     container_name: minimal-linux-dev
     mem_limit: 256m
     mem_reservation: 128m
@@ -12,7 +10,7 @@ services:
     restart: unless-stopped
 
   tst:
-    build: ../../..
+    image: alpine:latest
     container_name: minimal-linux-tst
     mem_limit: 256m
     mem_reservation: 128m
@@ -22,7 +20,7 @@ services:
     restart: unless-stopped
 
   stg:
-    build: ../../..
+    image: alpine:latest
     container_name: minimal-linux-stg
     mem_limit: 256m
     mem_reservation: 128m
@@ -32,7 +30,7 @@ services:
     restart: unless-stopped
 
   prd:
-    build: ../../..
+    image: alpine:latest
     container_name: minimal-linux-prd
     mem_limit: 256m
     mem_reservation: 128m
