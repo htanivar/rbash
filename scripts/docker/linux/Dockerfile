@@ -1,11 +1,23 @@
-# Minimal Alpine Linux image
+# Minimal Alpine Linux image with SSH
 FROM alpine:latest
 
-# Update package list and install essential packages if needed
+# Update package list and install essential packages
 RUN apk update && apk add --no-cache \
     bash \
     curl \
+    openssh \
     && rm -rf /var/cache/apk/*
 
-# Set a default command
-CMD ["/bin/bash"]
+# Configure SSH
+RUN ssh-keygen -A && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+
+# Set root password (change 'root' to your desired password)
+RUN echo "root:root" | chpasswd
+
+# Expose SSH port
+EXPOSE 22
+
+# Start SSH daemon and keep container running
+CMD ["/usr/sbin/sshd", "-D"]

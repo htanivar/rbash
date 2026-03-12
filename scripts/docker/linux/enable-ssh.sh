@@ -1,7 +1,2 @@
-apk update && \
-apk add openssh && \
-ssh-keygen -A && \
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config && \
-passwd && \
-/usr/sbin/sshd
+# SSH setup is now integrated into the Dockerfile
+# This file is kept for reference but is no longer needed
