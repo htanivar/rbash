@@ -1,5 +1,5 @@
-# Minimal Alpine Linux image with SSH
-FROM alpine:latest
+# Minimal Ubuntu 24.04 image with SSH
+FROM ubuntu:24.04
 
 # Update package list and install essential packages
 RUN apk update && apk add --no-cache \
