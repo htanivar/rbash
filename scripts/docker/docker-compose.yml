@@ -1,7 +1,7 @@
 services:
   docker-linux:
     build: ./linux
-    image: linux:latest
+    image: ubuntu:24.04
     container_name: root-linux
     mem_limit: 256m
     mem_reservation: 128m
@@ -11,3 +11,4 @@ services:
     restart: unless-stopped
     ports:
       - "2222:22"
+    command: /usr/sbin/sshd -D  # This starts SSH in foreground
