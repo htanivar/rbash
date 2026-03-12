@@ -12,4 +12,3 @@ services:
     restart: unless-stopped
     ports:
       - "2222:22"
-    command: /usr/sbin/sshd -D  # This starts SSH in foreground
