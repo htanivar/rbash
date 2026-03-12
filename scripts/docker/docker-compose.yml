@@ -1,8 +1,8 @@
 services:
   docker-linux:
     build: ./linux
-    platform: linux/arm64  # change the platform to required
-    image: ubuntu:24.04
+    platform: linux/arm64
+    image: linux:latest  # Use a custom name, not ubuntu:24.04
     container_name: root-linux
     mem_limit: 256m
     mem_reservation: 128m
@@ -12,3 +12,5 @@ services:
     restart: unless-stopped
     ports:
       - "2222:22"
+    # IMPORTANT: Remove any "command" line that might override the Dockerfile
+    # Do NOT add command: /bin/bash or anything else here
