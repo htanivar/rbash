@@ -1,6 +1,6 @@
 services:
   docker-linux:
-    build: .
+    build: linux
     container_name: root-linux
     mem_limit: 256m
     mem_reservation: 128m
