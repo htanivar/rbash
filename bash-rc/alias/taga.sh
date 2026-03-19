@@ -7,8 +7,8 @@ alias taga-github='firefox -P "ravi" https://www.github.com/nammataga &'
 alias taga-cloudflare='firefox -P "ravi" https://dash.cloudflare.com &'
 
 # --- Local Navigation ---
-alias tagaUi='cd ~/code/github/nammataga/prod/taga-ui'
-alias tagaApi='cd ~/code/github/nammataga/prod/taga-api'
+alias tagaUi='cd ~/code/github/nammataga/taga-ui'
+alias tagaApi='cd ~/code/github/nammataga/taga-api'
 
 
 # --- Remote Navigation ---
@@ -25,8 +25,16 @@ export PUBLISH_PROD_PATH="/apps/nammataga"
 
 alias LocalTaga='firefox -P ravi http://localhost:1701/ &'
 alias swaggerLocalTaga='firefox -P ravi http://localhost:1801/swagger/index.html &'
+
+alias devTaga='firefox -P ravi https://dev.nammataga.com/ &'
 alias swaggerDevTaga='firefox -P ravi https://devapi.nammataga.com/swagger/index.html &'
+
+alias tstTaga='firefox -P ravi https://tst.nammataga.com/ &'
 alias swaggerTstTaga='firefox -P ravi https://tstapi.nammataga.com/swagger/index.html &'
+
+alias nammataga='firefox -P ravi https://nammataga.com/ &'
+alias swaggerNammataga='firefox -P ravi https://nammataga.com/swagger/index.html &'
+
 
 startLocalTagaApi() {
     # Move to folder
