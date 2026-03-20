@@ -21,6 +21,10 @@ alias xwebstorm='pkill -f /apps/webstorm/bin/webstorm'
 alias goland='/apps/goland/bin/goland  >> /dev/null 2>&1&'
 alias xgoland='pkill -f /apps/goland/bin/goland'
 
+alias datagrip='/apps/datagrip/DataGrip-2025.3.5/bin/datagrip >> /dev/null 2>&1&'
+alias xdatagrip='pkill -f /apps/datagrip/DataGrip-2025.3.5/bin/datagrip'
+
+
 alias astudio='/apps/android-studio/bin/studio  >> /dev/null 2>&1&'
 alias xastudio='pkill -f /apps/android-studio/bin/studio'
 
