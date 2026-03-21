@@ -6,7 +6,7 @@
 
 # Base directory for software installations
 OPT_DIR="/apps"
-GO_VERSION="go1.24.12"
+GO_VERSION="go1.26.1"
 JDK_VERSION="17.0.17"
 
 # Directory for soft links
