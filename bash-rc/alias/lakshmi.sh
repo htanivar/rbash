@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# --- DB ---
+export DB_HOST="ai-dev"
+export DB_PORT="5432"
+export DB_USER="dev_user"
+export DB_PASSWORD="devpassword123"
+export DB_NAME="devdb"
+export DB_SSLMODE="disable"
+
 # --- Infra ---
 #alias lakshmi-info='cat secret | grep lakshmi'
 alias lakshmi-mail='firefox -P "lakshmi" https://www.gmail.com &'
