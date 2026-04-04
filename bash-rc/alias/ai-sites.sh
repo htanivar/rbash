@@ -45,7 +45,7 @@ alias perplexity='firefox -P "ravi" https://www.perplexity.ai &'
 alias youpro='firefox -P "ravi" https://you.com &'
 alias consensus='firefox -P "ravi" https://consensus.app &'
 alias elicit='firefox -P "ravi" https://elicit.com &'
-alias scispace='firefox -P "ravi" https://typeset.io &'
+#alias scispace='firefox -P "ravi" https://typeset.io &'
 alias connectedpapers='firefox -P "ravi" https://www.connectedpapers.com &'
 
 # === AI Audio & Music ===
@@ -114,7 +114,7 @@ alias adobe-podcast='firefox -P "ravi" https://podcast.adobe.com &'
 
 # === Additional AI Research & Knowledge ===
 alias notebooklm='firefox -P "ravi" https://notebooklm.google.com &'
-alias typeset='firefox -P "ravi" https://typeset.io &'
+#alias typeset='firefox -P "ravi" https://typeset.io &'
 alias semantic='firefox -P "ravi" https://www.semanticscholar.org &'
 alias phind-research='firefox -P "ravi" https://www.phind.com &'
 
