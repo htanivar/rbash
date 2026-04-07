@@ -18,7 +18,8 @@ aider-docker() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Bash function
@@ -29,7 +30,8 @@ aider-bash() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Code/Fullstack function
@@ -40,7 +42,8 @@ aider-code() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 aider-go() {
     export AIDER_SYSTEM_PROMPT="You are an expert Go developer specializing in writing clean, idiomatic, and efficient Go code. Prioritize performance, concurrency best practices, error handling, and maintainability. Use concise, direct tone with zero fluff. Output only valid Go code or diffs without comments or explanations."
@@ -49,7 +52,8 @@ aider-go() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Docs function
@@ -67,7 +71,8 @@ aider-arch() {
     export AIDER_MODEL="deepseek/deepseek-chat"
     export AIDER_EDIT_FORMAT="diff"
     export AIDER_ATTRIBUTE_AUTHOR="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # User docs function
@@ -76,7 +81,8 @@ aider-user() {
     export AIDER_MODEL="deepseek/deepseek-chat"
     export AIDER_EDIT_FORMAT="diff"
     export AIDER_ATTRIBUTE_AUTHOR="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Legal function
@@ -85,7 +91,8 @@ aider-legal() {
     export AIDER_MODEL="deepseek/deepseek-chat"
     export AIDER_EDIT_FORMAT="diff"
     export AIDER_ATTRIBUTE_AUTHOR="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # DevOps function
@@ -96,7 +103,8 @@ aider-devops() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Refactor function
@@ -106,7 +114,8 @@ aider-refactor() {
     export AIDER_EDIT_FORMAT="diff"
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Silent function (minimal output)
@@ -117,7 +126,8 @@ aider-silent() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Reasoning function
@@ -127,7 +137,8 @@ aider-reason() {
     export AIDER_EDIT_FORMAT="diff"
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_NO_PRETTY="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Flutter function
@@ -147,7 +158,8 @@ aider-flutter() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # React function
@@ -165,7 +177,8 @@ aider-react() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 aider-nextjs() {
@@ -185,8 +198,8 @@ Rules:
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Test function (for writing tests)
@@ -204,7 +217,8 @@ aider-test() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Auto function (for automation/scripts)
@@ -223,7 +237,8 @@ aider-auto() {
     export AIDER_ATTRIBUTE_AUTHOR="true"
     export AIDER_SUGGEST_SHELL_COMMANDS="false"
     export AIDER_NO_PRETTY="true"
-    command aider --show-diffs "$@"
+    export AIDER_AUTO_COMMITS="true"
+    command aider --show-diffs --auto-commits "$@"
 }
 
 # Debug function - shows what environment variables are being set
