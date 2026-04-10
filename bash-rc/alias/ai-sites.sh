@@ -66,7 +66,7 @@ alias pictory='firefox -P "ravi" https://pictory.ai &'
 
 # === AI Productivity & Workflows ===
 alias zapier='firefox -P "ravi" https://zapier.com &'
-alias make='firefox -P "ravi" https://www.make.com &'
+#alias make='firefox -P "ravi" https://www.make.com &'
 alias mem='firefox -P "ravi" https://mem.ai &'
 alias taskade='firefox -P "ravi" https://www.taskade.com &'
 alias clickup='firefox -P "ravi" https://clickup.com &'
