@@ -129,7 +129,7 @@ alias fireflies='firefox -P "ravi" https://fireflies.ai &'
 alias vertex='firefox -P "ravi" https://cloud.google.com/vertex-ai &'
 alias bedrock='firefox -P "ravi" https://aws.amazon.com/bedrock &'
 alias azure-ai='firefox -P "ravi" https://azure.microsoft.com/en-us/solutions/ai &'
-alias ollama='firefox -P "ravi" https://ollama.com &'
+#alias ollama='firefox -P "ravi" https://ollama.com &'
 alias anyscale='firefox -P "ravi" https://www.anyscale.com &'
 alias fireworks='firefox -P "ravi" https://fireworks.ai &'
 
