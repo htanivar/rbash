@@ -15,6 +15,10 @@ alias laxmi-domain='firefox -P "laxmi" https://www.godaddy.com &'
 alias laxmi-host='firefox -P "laxmi" https://hpanel.hostinger.com/vps/1468325/overview &'
 alias laxmi-github='firefox -P "laxmi" https://www.github.com/ &'
 alias laxmi-cloudflare='firefox -P "laxmi" https://dash.cloudflare.com &'
+alias laxmi-figma='firefox -P "laxmi" https://figma.com &'
+alias dev-laxmi='firefox -P "laxmi" https://dev.laxmi.srilakshmiretail.in &'
+alias dev-varam='firefox -P "laxmi" https://dev.varam.srilakshmiretail.in/swagger/index.html &'
+
 
 # --- Local Navigation ---
 
