@@ -39,9 +39,9 @@ alias laxmi-ravi='ssh ravi@laxmi-prod'
 #export PUBLISH_PROD_HOST="ravinath-prod"
 #export PUBLISH_PROD_PATH="/apps/nammalaxmi"
 #
-alias web-dev-laxmi='firefox -P laxmi http://laxmi-prod:3000/ &'
-#alias swaggerLocallaxmi='firefox -P laxmi http://localhost:2801/swagger/index.html &'
-#alias swaggerDevlaxmi='firefox -P laxmi https://devapi.nammalaxmi.com/swagger/index.html &'
+alias localLaxmi='firefox -P laxmi http://localhost:2801/swagger/index.html &'
+alias swaggerLocalVaram='firefox -P laxmi http://localhost:2801/swagger/index.html &'
+alias swaggerDevVaram='firefox -P laxmi https://dev.varam.srilakshmiretail.in/swagger/index.html &'
 #alias swaggerTstlaxmi='firefox -P laxmi https://tstapi.nammalaxmi.com/swagger/index.html &'
 #
 #startLocallaxmiApi() {
