@@ -127,10 +127,12 @@ for software in "${(@k)SOFTWARE}"; do
     check_and_add_path "$software"
 done
 
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export ANDROID_HOME=/apps/Android/Sdk
+export ANDROID_SDK_ROOT=/apps/Android/Sdk
+
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 
 
 
