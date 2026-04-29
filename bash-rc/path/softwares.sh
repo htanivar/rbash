@@ -88,7 +88,7 @@ check_and_add_path() {
         # ***********************************
 
         # Create soft link for detached execution (except for go)
-        if [ "$software" != "go" ]; then
+        if [ "$software" != "go" ] && [ "$software" != "flutter" ]; then
             create_soft_link "$software" "$exec_path"
         fi
 
