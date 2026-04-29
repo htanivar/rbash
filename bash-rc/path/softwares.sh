@@ -1,18 +1,11 @@
 #!/bin/bash
 
-# softwares.sh - Dynamic PATH setter with software availability check
-# Usage: source softwares.sh in your .bashrc
-
-
-# Base directory for software installations
 OPT_DIR="/apps"
 GO_VERSION="go1.26.1"
 JDK_VERSION="17.0.17"
 
-# Directory for soft links
 SLINK_BIN_DIR="$HOME/bin"
 
-# Software list with their expected subdirectories and executables
 declare -A SOFTWARE=(
     ["gimp"]="gimp:GIMP-3.0.0-RC3-x86_64.AppImage"
     ["intellij"]="intellij/bin:idea.sh"
@@ -27,22 +20,24 @@ declare -A SOFTWARE=(
     ["maven"]="maven/bin:mvn"
 )
 
-
-
-
-# Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-# Function to create soft link and wrapper script
+# Only GUI apps should use wrapper
+is_gui_app() {
+    case "$1" in
+        gimp|intellij|studio|webstorm|pycharm|goland) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
 create_soft_link() {
     local software=$1
     local exec_path=$2
     local link_name="$SLINK_BIN_DIR/$software"
 
-    # Create wrapper script for detached mode
     local wrapper_script="/tmp/${software}_wrapper.sh"
     cat > "$wrapper_script" << EOF
 #!/bin/bash
@@ -52,21 +47,16 @@ disown
 EOF
 
     chmod +x "$wrapper_script"
+    ln -sf "$wrapper_script" "$link_name"
+}
 
-    # 2. Create soft link to wrapper (No sudo required)
-    ln -sf "$wrapper_script" "$link_name" 2>/dev/null
-
-    # 3. Check and report
-    if [ $? -eq 0 ]; then
-        log_debug "${GREEN}  → Soft link created: $link_name${NC}"
-    else
-        # This failure is unlikely with $HOME/bin, but handles general errors
-        echo -e "${RED}  → ERROR: Failed to create soft link for $software.${NC}"
+add_to_path() {
+    local path=$1
+    if [[ ":$PATH:" != *":$path:"* ]]; then
+        export PATH="$path:$PATH"
     fi
 }
 
-
-# Function to check and add to PATH
 check_and_add_path() {
     local software=$1
     local path_info=${SOFTWARE[$software]}
@@ -77,64 +67,43 @@ check_and_add_path() {
     local exec_path="$full_path/$executable"
 
     if [ -d "$full_path" ] && [ -f "$exec_path" ]; then
-        # *** FIX for duplicate PATH entries ***
-        # Check if the full_path is ALREADY in the PATH variable
-        if ! echo "$PATH" | grep -q "$full_path"; then
-            export PATH="$full_path:$PATH"
-            echo -e "${GREEN}✓${NC} $software found and added to PATH"
-        else
-            echo -e "${GREEN}✓${NC} $software found. Already in PATH."
-        fi
-        # ***********************************
+        add_to_path "$full_path"
+        echo -e "${GREEN}✓${NC} $software ready"
 
-        # Create soft link for detached execution (except for go)
-        if [ "$software" != "go" ] && [ "$software" != "flutter" ]; then
+        # GUI apps → wrapper
+        if is_gui_app "$software"; then
             create_soft_link "$software" "$exec_path"
         fi
 
-        # Set specific environment variables (no change needed here)
         case $software in
-        # ... (rest of the case statement remains the same)
-        "intellij")
-            export IDEA_HOME="$OPT_DIR/intellij"
-            ;;
-        # ...
-        "go")
-           export GOROOT="$OPT_DIR/go/$GO_VERSION"
-               export GOPATH="$HOME/go"
-
-               if ! echo "$PATH" | grep -q "$GOROOT/bin"; then
-                   export PATH="$GOROOT/bin:$PATH"
-               fi
-           
-               if ! echo "$PATH" | grep -q "$GOPATH/bin"; then
-                   export PATH="$GOPATH/bin:$PATH"
-               fi
-               ;;
+            "java")
+                export JAVA_HOME="$OPT_DIR/java/jdk-${JDK_VERSION}"
+                add_to_path "$JAVA_HOME/bin"
+                ;;
+            "go")
+                export GOROOT="$OPT_DIR/go/$GO_VERSION"
+                export GOPATH="$HOME/go"
+                add_to_path "$GOROOT/bin"
+                add_to_path "$GOPATH/bin"
+                ;;
         esac
     else
-        echo -e "${RED}✗${NC} $software not found at $full_path"
-        echo -e "${YELLOW}  →${NC} Expected executable: $exec_path"
-        echo -e "${YELLOW}  →${NC} Please download and install $software to $full_path"
+        echo -e "${RED}✗${NC} $software missing at $full_path"
     fi
 }
 
-# Main execution
-echo -e "${YELLOW}Checking software availability in $OPT_DIR...${NC}"
+echo -e "${YELLOW}Checking software in $OPT_DIR...${NC}"
 
-# Check each software
 for software in "${(@k)SOFTWARE}"; do
     check_and_add_path "$software"
 done
 
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+# Android setup
+export ANDROID_HOME="/apps/Android/Sdk"
+export ANDROID_SDK_ROOT="/apps/Android/Sdk"
 
+add_to_path "$ANDROID_HOME/emulator"
+add_to_path "$ANDROID_HOME/platform-tools"
+add_to_path "$ANDROID_HOME/cmdline-tools/latest/bin"
 
-
-echo -e "${GREEN}PATH setup complete!${NC}"
-
-
-
+echo -e "${GREEN}Environment ready!${NC}"
