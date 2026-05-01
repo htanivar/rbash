@@ -1,39 +1,52 @@
 #!/bin/bash
+
+# --- DB ---
+export DB_HOST="ai-dev"
+export DB_PORT="5432"
+export DB_USER="dbadmin"
+export DB_PASSWORD="dev123!@#"
+export DB_NAME="dev_db"
+export DB_SSLMODE="disable"
+
 # --- Infra ---
-#alias lakshmi-info='cat secret | grep lakshmi'
-alias lakshmi-mail='firefox -P "lakshmi" https://www.gmail.com &'
-alias lakshmi-domain='firefox -P "lakshmi" https://www.godaddy.com &'
-alias lakshmi-host='firefox -P "lakshmi" https://hpanel.hostinger.com/vps/1468325/overview &'
-alias lakshmi-github='firefox -P "lakshmi" https://www.github.com/ &'
-alias lakshmi-cloudflare='firefox -P "lakshmi" https://dash.cloudflare.com &'
+#alias laxmi-info='cat secret | grep laxmi'
+alias laxmi-mail='firefox -P "laxmi" https://www.gmail.com &'
+alias laxmi-domain='firefox -P "laxmi" https://www.godaddy.com &'
+alias laxmi-host='firefox -P "laxmi" https://hpanel.hostinger.com/vps/1468325/overview &'
+alias laxmi-github='firefox -P "laxmi" https://www.github.com/ &'
+alias laxmi-cloudflare='firefox -P "laxmi" https://dash.cloudflare.com &'
+alias laxmi-figma='firefox -P "laxmi" https://figma.com &'
+alias dev-laxmi='firefox -P "laxmi" https://dev.laxmi.srilakshmiretail.in &'
+alias dev-varam='firefox -P "laxmi" https://dev.varam.srilakshmiretail.in/swagger/index.html &'
+
 
 # --- Local Navigation ---
 
 
-alias lakshmiBackoffice='cd ~/code/github/lakshmi-traders/backoffice'
-alias lakshmiMobile='cd ~/code/github/lakshmi-traders/mobile-app'
+alias laxmiBackoffice='cd ~/code/github/laxmi-traders/backoffice'
+alias laxmiMobile='cd ~/code/github/laxmi-traders/mobile-app'
 
 
 # --- Remote Navigation ---
-alias lakshmi-root='ssh root@lakshmi-prod'
-alias lsshadmin='ssh ravi-adm@lakshmi-prod'
-alias lakshmi-sys='ssh sys-lakshmi@lakshmi-prod'
-alias lsshdev='ssh dev@lakshmi-prod'
-alias lakshmi-ravi='ssh ravi@lakshmi-prod'
+alias laxmi-root='ssh root@laxmi-prod'
+alias lsshadmin='ssh ravi-adm@laxmi-prod'
+alias laxmi-sys='ssh sys-laxmi@laxmi-prod'
+alias lsshdev='ssh dev@laxmi-prod'
+alias laxmi-ravi='ssh ravi@laxmi-prod'
 
 # For Production
 #export PUBLISH_PROD_USER="ravi_adm"
 #export PUBLISH_PROD_HOST="ravinath-prod"
-#export PUBLISH_PROD_PATH="/apps/nammalakshmi"
+#export PUBLISH_PROD_PATH="/apps/nammalaxmi"
 #
-alias web-dev-lakshmi='firefox -P lakshmi http://lakshmi-prod:3000/ &'
-#alias swaggerLocallakshmi='firefox -P lakshmi http://localhost:2801/swagger/index.html &'
-#alias swaggerDevlakshmi='firefox -P lakshmi https://devapi.nammalakshmi.com/swagger/index.html &'
-#alias swaggerTstlakshmi='firefox -P lakshmi https://tstapi.nammalakshmi.com/swagger/index.html &'
+alias localLaxmi='firefox -P laxmi http://localhost:2801/swagger/index.html &'
+alias swaggerLocalVaram='firefox -P laxmi http://localhost:2801/swagger/index.html &'
+alias swaggerDevVaram='firefox -P laxmi https://dev.varam.srilakshmiretail.in/swagger/index.html &'
+#alias swaggerTstlaxmi='firefox -P laxmi https://tstapi.nammalaxmi.com/swagger/index.html &'
 #
-#startLocallakshmiApi() {
+#startLocallaxmiApi() {
 #    # Move to folder
-#    lakshmiApi
+#    laxmiApi
 #
 #    if [ $? -eq 0 ]; then
 #        echo "Successfully moved to: $(pwd)"
@@ -50,9 +63,9 @@ alias web-dev-lakshmi='firefox -P lakshmi http://lakshmi-prod:3000/ &'
 #    fi
 #}
 #
-#killLocallakshmi() {
+#killLocallaxmi() {
 #    # Move to folder
-#    lakshmiApi
+#    laxmiApi
 #
 #    if [ $? -eq 0 ]; then
 #        echo "Successfully moved to: $(pwd)"
@@ -69,9 +82,9 @@ alias web-dev-lakshmi='firefox -P lakshmi http://lakshmi-prod:3000/ &'
 #    fi
 #}
 #
-#startLocallakshmiUi() {
+#startLocallaxmiUi() {
 #    # Move to folder
-#    lakshmiUi
+#    laxmiUi
 #
 #    if [ $? -eq 0 ]; then
 #        echo "Successfully moved to: $(pwd)"
@@ -88,15 +101,15 @@ alias web-dev-lakshmi='firefox -P lakshmi http://lakshmi-prod:3000/ &'
 #    fi
 #}
 
-alias l-abacus='firefox -P "lakshmi" https://apps.abacus.ai &'
-alias l-deepseek='firefox -P "lakshmi" https://chat.deepseek.com &'
-alias l-perp='firefox -P "lakshmi" https://perplexity.ai &'
-alias l-gemini='firefox -P "lakshmi" https://gemini.google.com &'
-alias l-aistudio='firefox -P "lakshmi" https://aistudio.google.com &'
-alias l-chatgpt='firefox -P "lakshmi" https://chat.openai.com &'
-alias l-claude='firefox -P "lakshmi" https://claude.ai &'
-alias l-gemini='firefox -P "lakshmi" https://gemini.google.com &'
-alias l-copilot='firefox -P "lakshmi" https://copilot.microsoft.com &'
-alias l-pi='firefox -P "lakshmi" https://pi.ai &'
-alias l-you='firefox -P "lakshmi" https://you.com &'
-alias l-poe='firefox -P "lakshmi" https://poe.com &'
+alias l-abacus='firefox -P "laxmi" https://apps.abacus.ai &'
+alias l-deepseek='firefox -P "laxmi" https://chat.deepseek.com &'
+alias l-perp='firefox -P "laxmi" https://perplexity.ai &'
+alias l-gemini='firefox -P "laxmi" https://gemini.google.com &'
+alias l-aistudio='firefox -P "laxmi" https://aistudio.google.com &'
+alias l-chatgpt='firefox -P "laxmi" https://chat.openai.com &'
+alias l-claude='firefox -P "laxmi" https://claude.ai &'
+alias l-gemini='firefox -P "laxmi" https://gemini.google.com &'
+alias l-copilot='firefox -P "laxmi" https://copilot.microsoft.com &'
+alias l-pi='firefox -P "laxmi" https://pi.ai &'
+alias l-you='firefox -P "laxmi" https://you.com &'
+alias l-poe='firefox -P "laxmi" https://poe.com &'

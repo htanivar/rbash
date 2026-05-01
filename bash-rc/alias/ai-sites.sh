@@ -45,7 +45,7 @@ alias perplexity='firefox -P "ravi" https://www.perplexity.ai &'
 alias youpro='firefox -P "ravi" https://you.com &'
 alias consensus='firefox -P "ravi" https://consensus.app &'
 alias elicit='firefox -P "ravi" https://elicit.com &'
-alias scispace='firefox -P "ravi" https://typeset.io &'
+#alias scispace='firefox -P "ravi" https://typeset.io &'
 alias connectedpapers='firefox -P "ravi" https://www.connectedpapers.com &'
 
 # === AI Audio & Music ===
@@ -66,7 +66,7 @@ alias pictory='firefox -P "ravi" https://pictory.ai &'
 
 # === AI Productivity & Workflows ===
 alias zapier='firefox -P "ravi" https://zapier.com &'
-alias make='firefox -P "ravi" https://www.make.com &'
+#alias make='firefox -P "ravi" https://www.make.com &'
 alias mem='firefox -P "ravi" https://mem.ai &'
 alias taskade='firefox -P "ravi" https://www.taskade.com &'
 alias clickup='firefox -P "ravi" https://clickup.com &'
@@ -76,6 +76,63 @@ alias futuretools='firefox -P "ravi" https://futuretools.io &'
 alias thereisanaiforthat='firefox -P "ravi" https://thereisanaiforthat.com &'
 alias ailib='firefox -P "ravi" https://www.theresanaiforthat.com &'
 
+# === Additional AI Chat Platforms ===
+alias grok='firefox -P "ravi" https://grok.com &'
+alias meta='firefox -P "ravi" https://meta.ai &'
+alias mistral='firefox -P "ravi" https://chat.mistral.ai &'
+alias cohere='firefox -P "ravi" https://coral.cohere.com &'
+alias groq='firefox -P "ravi" https://groq.com &'
+alias le-chat='firefox -P "ravi" https://le-chat.mistral.ai &'
+
+# === Additional AI Coding & Development ===
+alias v0='firefox -P "ravi" https://v0.dev &'
+alias bolt='firefox -P "ravi" https://bolt.new &'
+alias lovable='firefox -P "ravi" https://lovable.dev &'
+alias windsurf='firefox -P "ravi" https://codeium.com/windsurf &'
+alias aider='firefox -P "ravi" https://aider.chat &'
+alias sourcegraph='firefox -P "ravi" https://sourcegraph.com &'
+
+# === Additional AI Image Generation ===
+alias flux='firefox -P "ravi" https://flux1.ai &'
+alias nightcafe='firefox -P "ravi" https://creator.nightcafe.studio &'
+alias adobe-gen='firefox -P "ravi" https://firefly.adobe.com &'
+alias krea='firefox -P "ravi" https://www.krea.ai &'
+alias clipdrop='firefox -P "ravi" https://clipdrop.co &'
+
+# === Additional AI Video & Animation ===
+alias kling='firefox -P "ravi" https://klingai.com &'
+alias luma='firefox -P "ravi" https://lumalabs.ai &'
+alias sora='firefox -P "ravi" https://sora.com &'
+alias hailuo='firefox -P "ravi" https://hailuoai.video &'
+alias veo='firefox -P "ravi" https://deepmind.google/technologies/veo &'
+
+# === Additional AI Audio & Music ===
+alias aiva='firefox -P "ravi" https://www.aiva.ai &'
+alias boomy='firefox -P "ravi" https://boomy.com &'
+alias speechify='firefox -P "ravi" https://speechify.com &'
+alias adobe-podcast='firefox -P "ravi" https://podcast.adobe.com &'
+
+# === Additional AI Research & Knowledge ===
+alias notebooklm='firefox -P "ravi" https://notebooklm.google.com &'
+#alias typeset='firefox -P "ravi" https://typeset.io &'
+alias semantic='firefox -P "ravi" https://www.semanticscholar.org &'
+alias phind-research='firefox -P "ravi" https://www.phind.com &'
+
+# === Additional AI Productivity & Writing ===
+alias gamma='firefox -P "ravi" https://gamma.app &'
+alias tome='firefox -P "ravi" https://tome.app &'
+alias beautiful='firefox -P "ravi" https://www.beautiful.ai &'
+alias otter='firefox -P "ravi" https://otter.ai &'
+alias fireflies='firefox -P "ravi" https://fireflies.ai &'
+
+# === Additional AI Platforms & APIs ===
+alias vertex='firefox -P "ravi" https://cloud.google.com/vertex-ai &'
+alias bedrock='firefox -P "ravi" https://aws.amazon.com/bedrock &'
+alias azure-ai='firefox -P "ravi" https://azure.microsoft.com/en-us/solutions/ai &'
+#alias ollama='firefox -P "ravi" https://ollama.com &'
+alias anyscale='firefox -P "ravi" https://www.anyscale.com &'
+alias fireworks='firefox -P "ravi" https://fireworks.ai &'
+
 # === Custom shortcuts for specific tasks ===
 alias ai-help='firefox -P "ravi" https://chat.openai.com https://claude.ai https://gemini.google.com &'
 alias ai-image='firefox -P "ravi" https://midjourney.com https://leonardo.ai https://playgroundai.com &'
@@ -83,6 +140,9 @@ alias ai-code='firefox -P "ravi" https://github.com/features/copilot https://cur
 alias ai-research='firefox -P "ravi" https://perplexity.ai https://consensus.app https://elicit.com &'
 alias ai-music='firefox -P "ravi" https://suno.ai https://udio.com https://elevenlabs.io &'
 alias ai-video='firefox -P "ravi" https://runwayml.com https://pika.art https://synthesia.io &'
+alias ai-write='firefox -P "ravi" https://app.grammarly.com https://quillbot.com https://rytr.me &'
+alias ai-present='firefox -P "ravi" https://gamma.app https://tome.app https://beautiful.ai &'
+alias ai-meet='firefox -P "ravi" https://otter.ai https://fireflies.ai https://www.descript.com &'
 
 # === Quick launchers with different browsers ===
 alias chatgpt-chrome='google-chrome --profile-directory="Profile 1" https://chat.openai.com &'
