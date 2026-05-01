@@ -7,7 +7,7 @@ alias taga-github='firefox -P "ravi" https://www.github.com/nammataga &'
 alias taga-cloudflare='firefox -P "ravi" https://dash.cloudflare.com &'
 
 # --- Local Navigation ---
-alias tagaUi='cd ~/code/github/nammataga/taga-ui'
+alias tagaWeb='cd ~/code/github/nammataga/taga-web'
 alias tagaApi='cd ~/code/github/nammataga/taga-api'
 
 
