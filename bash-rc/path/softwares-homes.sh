@@ -18,6 +18,7 @@ declare -A SOFTWARE=(
     ["java"]="java/jdk-${JDK_VERSION}/bin:java"
     ["gradle"]="gradle/gradle-9.2.0/bin:gradle"
     ["maven"]="maven/bin:mvn"
+    ["firefox"]="firefox:firefox"
 )
 
 RED='\033[0;31m'
@@ -28,7 +29,7 @@ NC='\033[0m'
 # Only GUI apps should use wrapper
 is_gui_app() {
     case "$1" in
-        gimp|intellij|studio|webstorm|pycharm|goland) return 0 ;;
+        gimp|intellij|studio|webstorm|pycharm|goland|firefox) return 0 ;;
         *) return 1 ;;
     esac
 }
