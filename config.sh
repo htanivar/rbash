@@ -1,7 +1,7 @@
 # config.sh - Central configuration for all scripts
 
 # Project root - will be set by core-loader.sh if not already set
-PROJECT_ROOT_DIR="${PROJECT_ROOT_DIR:-/home/ravi/code/github/htanivar/rbash}"
+PROJECT_ROOT_DIR="${PROJECT_ROOT_DIR:-$HOME/code/github/htanivar/rbash}"
 
 # Logging configuration
 DEFAULT_LOG_DIR="$PROJECT_ROOT_DIR/logs"

@@ -21,7 +21,7 @@ log_debug () {
 # ==============================================================================
 
 
-RC_DIR="/home/ravi/code/github/htanivar/rbash/bash-rc"
+RC_DIR="$HOME/code/github/htanivar/rbash/bash-rc"
 
 CONFIG_DIR="$RC_DIR/config"
 PATH_DIR="$RC_DIR/path"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-RAVI_LINUX="/home/ravi/.ssh/id_rsa"
+RAVI_LINUX="$HOME/.ssh/id_rsa"
 
 # --- SSH Agent ---
 # Start the SSH agent and add the SSH key if not already running

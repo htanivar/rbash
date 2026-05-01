@@ -94,7 +94,13 @@ check_and_add_path() {
 
 echo -e "${YELLOW}Checking software in $OPT_DIR...${NC}"
 
-for software in "${(@k)SOFTWARE}"; do
+if [ -n "$ZSH_VERSION" ]; then
+    keys=("${(@k)SOFTWARE}")
+else
+    keys=("${!SOFTWARE[@]}")
+fi
+
+for software in "${keys[@]}"; do
     check_and_add_path "$software"
 done
 

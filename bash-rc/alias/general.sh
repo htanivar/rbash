@@ -26,7 +26,7 @@ alias accomodationSites="compgen -a | grep '^ac-'"
 alias IndianGovSites="compgen -a | grep '^in-'"
 alias TNGovSites="compgen -a | grep '^tn-'"
 alias courtSites="compgen -a | grep -E '^(sc|hc|tn|law)-' | sort"
-alias aiSites='grep "^alias" /home/ravi/code/github/htanivar/rbash/bash-rc/alias/ai-sites.sh'
+alias aiSites='grep "^alias" $HOME/code/github/htanivar/rbash/bash-rc/alias/ai-sites.sh'
 
 
 alias sites="compgen -a | grep 'Sites$'"
