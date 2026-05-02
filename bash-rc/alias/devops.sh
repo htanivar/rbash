@@ -1,11 +1,11 @@
-alias gmail='firefox -P "ravi" https://www.gmail.com/ &'
-alias google='firefox -P "ravi" https://google.com &'
-alias yahoo='firefox -P "ravi" https://www.yahoo.com &'
-alias stackoverflow='firefox -P "ravi" https://stackoverflow.com &'
-alias github='firefox -P "ravi" https://github.com &'
-alias gitlab='firefox -P "ravi" https://gitlab.com &'
-alias learn='firefox -P "ravi" https://learn.jaganathan.co.uk &'
-alias veda='firefox -P "ravi" https://veda.jaganathan.co.uk &'
+alias gmail='/apps/firefox/firefox -P ravi -no-remote https://www.gmail.com/ &'
+alias google='/apps/firefox/firefox -P ravi -no-remote https://google.com &'
+alias yahoo='/apps/firefox/firefox -P ravi -no-remote https://www.yahoo.com &'
+alias stackoverflow='/apps/firefox/firefox -P ravi -no-remote https://stackoverflow.com &'
+alias github='/apps/firefox/firefox -P ravi -no-remote https://github.com &'
+alias gitlab='/apps/firefox/firefox -P ravi -no-remote https://gitlab.com &'
+alias learn='/apps/firefox/firefox -P ravi -no-remote https://learn.jaganathan.co.uk &'
+alias veda='/apps/firefox/firefox -P ravi -no-remote https://veda.jaganathan.co.uk &'
 
 
 

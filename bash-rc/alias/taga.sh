@@ -1,10 +1,11 @@
 #!/bin/bash
 # --- Infra ---
 alias taga-info='cat secret | grep taga'
-alias taga-domain='firefox -P "taga" https://www.godaddy.com &'
-alias taga-host='firefox -P "taga" https://hpanel.hostinger.com/vps/992688/overview &'
-alias taga-github='firefox -P "taga" https://www.github.com/nammataga &'
-alias taga-cloudflare='firefox -P "taga" https://dash.cloudflare.com &'
+alias taga-mail='/apps/firefox/firefox -P taga -no-remote https://www.gmail.com &'
+alias taga-domain='/apps/firefox/firefox -P taga -no-remote https://www.godaddy.com &'
+alias taga-host='/apps/firefox/firefox -P taga -no-remote https://hpanel.hostinger.com/vps/992688/overview &'
+alias taga-github='/apps/firefox/firefox -P taga -no-remote https://www.github.com/nammataga &'
+alias taga-cloudflare='/apps/firefox/firefox -P taga -no-remote https://dash.cloudflare.com &'
 
 # --- Local Navigation ---
 alias tagaWeb='cd ~/code/github/nammataga/taga-web'
@@ -23,17 +24,19 @@ export PUBLISH_PROD_USER="ravi_adm"
 export PUBLISH_PROD_HOST="ravinath-prod"
 export PUBLISH_PROD_PATH="/apps/nammataga"
 
-alias LocalTaga='firefox -P taga http://localhost:1701/ &'
-alias swaggerLocalTaga='firefox -P taga http://localhost:1801/swagger/index.html &'
 
-alias devTaga='firefox -P taga https://dev.nammataga.com/ &'
-alias swaggerDevTaga='firefox -P taga https://devapi.nammataga.com/swagger/index.html &'
 
-alias tstTaga='firefox -P taga https://tst.nammataga.com/ &'
-alias swaggerTstTaga='firefox -P taga https://tstapi.nammataga.com/swagger/index.html &'
+alias LocalTaga='/apps/firefox/firefox -P taga -no-remote http://localhost:1701/ &'
+alias swaggerLocalTaga='/apps/firefox/firefox -P taga -no-remote  http://localhost:1801/swagger/index.html &'
 
-alias nammataga='firefox -P taga https://nammataga.com/ &'
-alias swaggerNammataga='firefox -P taga https://nammataga.com/swagger/index.html &'
+alias devTaga='/apps/firefox/firefox -P taga -no-remote  https://dev.nammataga.com/ &'
+alias swaggerDevTaga='/apps/firefox/firefox -P taga -no-remote  https://devapi.nammataga.com/swagger/index.html &'
+
+alias tstTaga='/apps/firefox/firefox -P taga -no-remote  https://tst.nammataga.com/ &'
+alias swaggerTstTaga='/apps/firefox/firefox -P taga -no-remote  https://tstapi.nammataga.com/swagger/index.html &'
+
+alias nammataga='/apps/firefox/firefox -P taga -no-remote  https://nammataga.com/ &'
+alias swaggerNammataga='/apps/firefox/firefox -P taga -no-remote  https://nammataga.com/swagger/index.html &'
 
 
 startLocalTagaApi() {

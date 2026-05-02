@@ -1,2 +1,2 @@
 #alias amazon='xdg-open https://www.amazon.in/ &'
-alias tneb='firefox -P "ravi" https://www.tnebnet.org/awp/login/ &'
+alias tneb='/apps/firefox/firefox -P ravi -no-remote https://www.tnebnet.org/awp/login/ &'
