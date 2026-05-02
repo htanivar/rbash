@@ -1,27 +1,27 @@
 # ⚖️ Supreme Court of India
-alias sc-india='firefox -P "ravi" https://www.sci.gov.in &'
-alias sc-ecourts='firefox -P "ravi" https://www.sci.gov.in/case-status &'
-alias sc-judgements='firefox -P "ravi" https://www.sci.gov.in/judgements &'
-alias sc-causelist='firefox -P "ravi" https://www.sci.gov.in/cause-list &'
-alias sc-orders='firefox -P "ravi" https://www.sci.gov.in/orders &'
+alias sc-india='/apps/firefox/firefox -P ravi -no-remote https://www.sci.gov.in &'
+alias sc-ecourts='/apps/firefox/firefox -P ravi -no-remote https://www.sci.gov.in/case-status &'
+alias sc-judgements='/apps/firefox/firefox -P ravi -no-remote https://www.sci.gov.in/judgements &'
+alias sc-causelist='/apps/firefox/firefox -P ravi -no-remote https://www.sci.gov.in/cause-list &'
+alias sc-orders='/apps/firefox/firefox -P ravi -no-remote https://www.sci.gov.in/orders &'
 
 # ⚖️ High Court of Madras (Tamil Nadu)
-alias hc-madras='firefox -P "ravi" https://hcmadras.tn.gov.in/ &'
-alias hc-madras-judgements='firefox -P "ravi" https://mhc.tn.gov.in/judis/ &'
-alias hc-madras-casestatus='firefox -P "ravi" https://hcservices.ecourts.gov.in/ecourtindiaHC/index_highcourt.php?stateNm=Madras &'
-alias hc-madras-causelist='firefox -P "ravi" https://mhc.tn.gov.in/judis/clists/clists-madras/index.php &'
+alias hc-madras='/apps/firefox/firefox -P ravi -no-remote https://hcmadras.tn.gov.in/ &'
+alias hc-madras-judgements='/apps/firefox/firefox -P ravi -no-remote https://mhc.tn.gov.in/judis/ &'
+alias hc-madras-casestatus='/apps/firefox/firefox -P ravi -no-remote https://hcservices.ecourts.gov.in/ecourtindiaHC/index_highcourt.php?stateNm=Madras &'
+alias hc-madras-causelist='/apps/firefox/firefox -P ravi -no-remote https://mhc.tn.gov.in/judis/clists/clists-madras/index.php &'
 
 
 
 # 🧑‍⚖️ Tamil Nadu e-Courts (District & Subordinate Courts)
-alias tn-ecourts='firefox -P "ravi" https://ecourts.gov.in/ecourts_home/ &'
-alias tn-ecourts-services='firefox -P "ravi" https://services.ecourts.gov.in/ecourtindia_v6/ &'
-alias tn-ecourts-casestatus='firefox -P "ravi" https://services.ecourts.gov.in/ecourtindia_v6/?p=casestatus &'
-alias tn-ecourts-orders='firefox -P "ravi" https://services.ecourts.gov.in/ecourtindia_v6/?p=order &'
+alias tn-ecourts='/apps/firefox/firefox -P ravi -no-remote https://ecourts.gov.in/ecourts_home/ &'
+alias tn-ecourts-services='/apps/firefox/firefox -P ravi -no-remote https://services.ecourts.gov.in/ecourtindia_v6/ &'
+alias tn-ecourts-casestatus='/apps/firefox/firefox -P ravi -no-remote https://services.ecourts.gov.in/ecourtindia_v6/?p=casestatus &'
+alias tn-ecourts-orders='/apps/firefox/firefox -P ravi -no-remote https://services.ecourts.gov.in/ecourtindia_v6/?p=order &'
 
 # 🔍 Judgement & Ruling Search Portals (Official / Widely Used)
-alias law-judis='firefox -P "ravi" https://judis.nic.in &'
-alias law-supreme-judis='firefox -P "ravi" https://judis.nic.in/supremecourt/ &'
-alias law-hc-judis='firefox -P "ravi" https://judis.nic.in/highcourts/ &'
-alias law-indian-kanoon='firefox -P "ravi" https://indiankanoon.org &'
-alias law-ecourts-search='firefox -P "ravi" https://services.ecourts.gov.in/ecourtindia_v6/?p=judgement_search &'
+alias law-judis='/apps/firefox/firefox -P ravi -no-remote https://judis.nic.in &'
+alias law-supreme-judis='/apps/firefox/firefox -P ravi -no-remote https://judis.nic.in/supremecourt/ &'
+alias law-hc-judis='/apps/firefox/firefox -P ravi -no-remote https://judis.nic.in/highcourts/ &'
+alias law-indian-kanoon='/apps/firefox/firefox -P ravi -no-remote https://indiankanoon.org &'
+alias law-ecourts-search='/apps/firefox/firefox -P ravi -no-remote https://services.ecourts.gov.in/ecourtindia_v6/?p=judgement_search &'
