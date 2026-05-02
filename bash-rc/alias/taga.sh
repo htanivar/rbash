@@ -1,10 +1,10 @@
 #!/bin/bash
 # --- Infra ---
 alias taga-info='cat secret | grep taga'
-alias taga-domain='firefox -P "ravi" https://www.godaddy.com &'
-alias taga-host='firefox -P "ravi" https://hpanel.hostinger.com/vps/992688/overview &'
-alias taga-github='firefox -P "ravi" https://www.github.com/nammataga &'
-alias taga-cloudflare='firefox -P "ravi" https://dash.cloudflare.com &'
+alias taga-domain='firefox -P "taga" https://www.godaddy.com &'
+alias taga-host='firefox -P "taga" https://hpanel.hostinger.com/vps/992688/overview &'
+alias taga-github='firefox -P "taga" https://www.github.com/nammataga &'
+alias taga-cloudflare='firefox -P "taga" https://dash.cloudflare.com &'
 
 # --- Local Navigation ---
 alias tagaWeb='cd ~/code/github/nammataga/taga-web'
@@ -23,17 +23,17 @@ export PUBLISH_PROD_USER="ravi_adm"
 export PUBLISH_PROD_HOST="ravinath-prod"
 export PUBLISH_PROD_PATH="/apps/nammataga"
 
-alias LocalTaga='firefox -P ravi http://localhost:1701/ &'
-alias swaggerLocalTaga='firefox -P ravi http://localhost:1801/swagger/index.html &'
+alias LocalTaga='firefox -P taga http://localhost:1701/ &'
+alias swaggerLocalTaga='firefox -P taga http://localhost:1801/swagger/index.html &'
 
-alias devTaga='firefox -P ravi https://dev.nammataga.com/ &'
-alias swaggerDevTaga='firefox -P ravi https://devapi.nammataga.com/swagger/index.html &'
+alias devTaga='firefox -P taga https://dev.nammataga.com/ &'
+alias swaggerDevTaga='firefox -P taga https://devapi.nammataga.com/swagger/index.html &'
 
-alias tstTaga='firefox -P ravi https://tst.nammataga.com/ &'
-alias swaggerTstTaga='firefox -P ravi https://tstapi.nammataga.com/swagger/index.html &'
+alias tstTaga='firefox -P taga https://tst.nammataga.com/ &'
+alias swaggerTstTaga='firefox -P taga https://tstapi.nammataga.com/swagger/index.html &'
 
-alias nammataga='firefox -P ravi https://nammataga.com/ &'
-alias swaggerNammataga='firefox -P ravi https://nammataga.com/swagger/index.html &'
+alias nammataga='firefox -P taga https://nammataga.com/ &'
+alias swaggerNammataga='firefox -P taga https://nammataga.com/swagger/index.html &'
 
 
 startLocalTagaApi() {
@@ -63,7 +63,7 @@ killLocalTaga() {
         echo "Successfully moved to: $(pwd)"
 
         # Check for the correct filename: dev-ops.sh
-        if [ -f "./dev-ops.sh" ]; then
+        if [ -f "./dev-ops.sh" ]; thenls
             chmod +x ./dev-ops.sh
             ./dev-ops.sh kill
         else
@@ -74,9 +74,9 @@ killLocalTaga() {
     fi
 }
 
-startLocalTagaUi() {
+startLocalTagaWeb() {
     # Move to folder
-    tagaUi
+    tagaWeb
 
     if [ $? -eq 0 ]; then
         echo "Successfully moved to: $(pwd)"
