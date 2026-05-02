@@ -16,6 +16,7 @@ alias laxmi-host='/apps/firefox/firefox -P laxmi -no-remote  https://hpanel.host
 alias laxmi-github='/apps/firefox/firefox -P laxmi -no-remote  https://www.github.com/ &'
 alias laxmi-cloudflare='/apps/firefox/firefox -P laxmi -no-remote  https://dash.cloudflare.com &'
 alias laxmi-figma='/apps/firefox/firefox -P laxmi -no-remote  https://figma.com &'
+
 alias dev-laxmi='/apps/firefox/firefox -P laxmi -no-remote  https://dev.laxmi.srilakshmiretail.in &'
 alias dev-varam='/apps/firefox/firefox -P laxmi -no-remote  https://dev.varam.srilakshmiretail.in/swagger/index.html &'
 
@@ -42,64 +43,6 @@ alias laxmi-ravi='ssh ravi@laxmi-prod'
 alias localLaxmi='/apps/firefox/firefox -P laxmi -no-remote http://localhost:2801/swagger/index.html &'
 alias swaggerLocalVaram='/apps/firefox/firefox -P laxmi -no-remote http://localhost:2801/swagger/index.html &'
 alias swaggerDevVaram='/apps/firefox/firefox -P laxmi -no-remote https://dev.varam.srilakshmiretail.in/swagger/index.html &'
-#alias swaggerTstlaxmi='/apps/firefox/firefox -P laxmi -no-remote https://tstapi.nammalaxmi.com/swagger/index.html &'
-#
-#startLocallaxmiApi() {
-#    # Move to folder
-#    laxmiApi
-#
-#    if [ $? -eq 0 ]; then
-#        echo "Successfully moved to: $(pwd)"
-#
-#        # Check for the correct filename: dev-ops.sh
-#        if [ -f "./dev-ops.sh" ]; then
-#            chmod +x ./dev-ops.sh
-#            ./dev-ops.sh start
-#        else
-#            echo "Error: 'dev-ops.sh' not found in $(pwd)"
-#        fi
-#    else
-#        echo "Error: Failed to change directory."
-#    fi
-#}
-#
-#killLocallaxmi() {
-#    # Move to folder
-#    laxmiApi
-#
-#    if [ $? -eq 0 ]; then
-#        echo "Successfully moved to: $(pwd)"
-#
-#        # Check for the correct filename: dev-ops.sh
-#        if [ -f "./dev-ops.sh" ]; then
-#            chmod +x ./dev-ops.sh
-#            ./dev-ops.sh kill
-#        else
-#            echo "Error: 'dev-ops.sh' not found in $(pwd)"
-#        fi
-#    else
-#        echo "Error: Failed to change directory."
-#    fi
-#}
-#
-#startLocallaxmiUi() {
-#    # Move to folder
-#    laxmiUi
-#
-#    if [ $? -eq 0 ]; then
-#        echo "Successfully moved to: $(pwd)"
-#
-#        # Check for the correct filename: dev-ops.sh
-#        if [ -f "./run.sh" ]; then
-#            chmod +x ./run.sh
-#            ./run.sh local
-#        else
-#            echo "Error: 'run.sh' not found in $(pwd)"
-#        fi
-#    else
-#        echo "Error: Failed to change directory."
-#    fi
-#}
 
 alias l-abacus='/apps/firefox/firefox -P laxmi -no-remote  https://apps.abacus.ai &'
 alias l-deepseek='/apps/firefox/firefox -P laxmi -no-remote  https://chat.deepseek.com &'
