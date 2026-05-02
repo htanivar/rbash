@@ -10,14 +10,14 @@ export DB_SSLMODE="disable"
 
 # --- Infra ---
 #alias laxmi-info='cat secret | grep laxmi'
-alias laxmi-mail='/apps/firefox/firefox -P laxmi-no-remote https://www.gmail.com &'
-alias laxmi-domain='/apps/firefox/firefox -P laxmi-no-remote https://www.godaddy.com &'
-alias laxmi-host='/apps/firefox/firefox -P laxmi-no-remote https://hpanel.hostinger.com/vps/1468325/overview &'
-alias laxmi-github='/apps/firefox/firefox -P laxmi-no-remote https://www.github.com/ &'
-alias laxmi-cloudflare='/apps/firefox/firefox -P laxmi-no-remote https://dash.cloudflare.com &'
-alias laxmi-figma='/apps/firefox/firefox -P laxmi-no-remote https://figma.com &'
-alias dev-laxmi='/apps/firefox/firefox -P laxmi-no-remote https://dev.laxmi.srilakshmiretail.in &'
-alias dev-varam='/apps/firefox/firefox -P laxmi-no-remote https://dev.varam.srilakshmiretail.in/swagger/index.html &'
+alias laxmi-mail='/apps/firefox/firefox -P laxmi -no-remote  https://www.gmail.com &'
+alias laxmi-domain='/apps/firefox/firefox -P laxmi -no-remote  https://www.godaddy.com &'
+alias laxmi-host='/apps/firefox/firefox -P laxmi -no-remote  https://hpanel.hostinger.com/vps/1468325/overview &'
+alias laxmi-github='/apps/firefox/firefox -P laxmi -no-remote  https://www.github.com/ &'
+alias laxmi-cloudflare='/apps/firefox/firefox -P laxmi -no-remote  https://dash.cloudflare.com &'
+alias laxmi-figma='/apps/firefox/firefox -P laxmi -no-remote  https://figma.com &'
+alias dev-laxmi='/apps/firefox/firefox -P laxmi -no-remote  https://dev.laxmi.srilakshmiretail.in &'
+alias dev-varam='/apps/firefox/firefox -P laxmi -no-remote  https://dev.varam.srilakshmiretail.in/swagger/index.html &'
 
 
 # --- Local Navigation ---
@@ -39,10 +39,10 @@ alias laxmi-ravi='ssh ravi@laxmi-prod'
 #export PUBLISH_PROD_HOST="ravinath-prod"
 #export PUBLISH_PROD_PATH="/apps/nammalaxmi"
 #
-alias localLaxmi='firefox -P laxmi http://localhost:2801/swagger/index.html &'
-alias swaggerLocalVaram='firefox -P laxmi http://localhost:2801/swagger/index.html &'
-alias swaggerDevVaram='firefox -P laxmi https://dev.varam.srilakshmiretail.in/swagger/index.html &'
-#alias swaggerTstlaxmi='firefox -P laxmi https://tstapi.nammalaxmi.com/swagger/index.html &'
+alias localLaxmi='/apps/firefox/firefox -P laxmi -no-remote http://localhost:2801/swagger/index.html &'
+alias swaggerLocalVaram='/apps/firefox/firefox -P laxmi -no-remote http://localhost:2801/swagger/index.html &'
+alias swaggerDevVaram='/apps/firefox/firefox -P laxmi -no-remote https://dev.varam.srilakshmiretail.in/swagger/index.html &'
+#alias swaggerTstlaxmi='/apps/firefox/firefox -P laxmi -no-remote https://tstapi.nammalaxmi.com/swagger/index.html &'
 #
 #startLocallaxmiApi() {
 #    # Move to folder
@@ -101,15 +101,15 @@ alias swaggerDevVaram='firefox -P laxmi https://dev.varam.srilakshmiretail.in/sw
 #    fi
 #}
 
-alias l-abacus='/apps/firefox/firefox -P laxmi-no-remote https://apps.abacus.ai &'
-alias l-deepseek='/apps/firefox/firefox -P laxmi-no-remote https://chat.deepseek.com &'
-alias l-perp='/apps/firefox/firefox -P laxmi-no-remote https://perplexity.ai &'
-alias l-gemini='/apps/firefox/firefox -P laxmi-no-remote https://gemini.google.com &'
-alias l-aistudio='/apps/firefox/firefox -P laxmi-no-remote https://aistudio.google.com &'
-alias l-chatgpt='/apps/firefox/firefox -P laxmi-no-remote https://chat.openai.com &'
-alias l-claude='/apps/firefox/firefox -P laxmi-no-remote https://claude.ai &'
-alias l-gemini='/apps/firefox/firefox -P laxmi-no-remote https://gemini.google.com &'
-alias l-copilot='/apps/firefox/firefox -P laxmi-no-remote https://copilot.microsoft.com &'
-alias l-pi='/apps/firefox/firefox -P laxmi-no-remote https://pi.ai &'
-alias l-you='/apps/firefox/firefox -P laxmi-no-remote https://you.com &'
-alias l-poe='/apps/firefox/firefox -P laxmi-no-remote https://poe.com &'
+alias l-abacus='/apps/firefox/firefox -P laxmi -no-remote  https://apps.abacus.ai &'
+alias l-deepseek='/apps/firefox/firefox -P laxmi -no-remote  https://chat.deepseek.com &'
+alias l-perp='/apps/firefox/firefox -P laxmi -no-remote  https://perplexity.ai &'
+alias l-gemini='/apps/firefox/firefox -P laxmi -no-remote  https://gemini.google.com &'
+alias l-aistudio='/apps/firefox/firefox -P laxmi -no-remote  https://aistudio.google.com &'
+alias l-chatgpt='/apps/firefox/firefox -P laxmi -no-remote  https://chat.openai.com &'
+alias l-claude='/apps/firefox/firefox -P laxmi -no-remote  https://claude.ai &'
+alias l-gemini='/apps/firefox/firefox -P laxmi -no-remote  https://gemini.google.com &'
+alias l-copilot='/apps/firefox/firefox -P laxmi -no-remote  https://copilot.microsoft.com &'
+alias l-pi='/apps/firefox/firefox -P laxmi -no-remote  https://pi.ai &'
+alias l-you='/apps/firefox/firefox -P laxmi -no-remote  https://you.com &'
+alias l-poe='/apps/firefox/firefox -P laxmi -no-remote  https://poe.com &'
