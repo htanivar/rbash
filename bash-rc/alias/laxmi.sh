@@ -16,6 +16,7 @@ alias laxmi-host='/apps/firefox/firefox -P laxmi -no-remote  https://hpanel.host
 alias laxmi-github='/apps/firefox/firefox -P laxmi -no-remote  https://www.github.com/ &'
 alias laxmi-cloudflare='/apps/firefox/firefox -P laxmi -no-remote  https://dash.cloudflare.com &'
 alias laxmi-figma='/apps/firefox/firefox -P laxmi -no-remote  https://figma.com &'
+
 alias dev-laxmi='/apps/firefox/firefox -P laxmi -no-remote  https://dev.laxmi.srilakshmiretail.in &'
 alias dev-varam='/apps/firefox/firefox -P laxmi -no-remote  https://dev.varam.srilakshmiretail.in/swagger/index.html &'
 
