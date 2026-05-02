@@ -63,7 +63,8 @@ killLocalTaga() {
         echo "Successfully moved to: $(pwd)"
 
         # Check for the correct filename: dev-ops.sh
-        if [ -f "./dev-ops.sh" ]; thenls
+        if [ -f "./dev-ops.sh" ]; then
+            ls
             chmod +x ./dev-ops.sh
             ./dev-ops.sh kill
         else
